@@ -1,0 +1,1938 @@
+//1. 변수 선언
+$메인컬러: #185130;
+$메인글자: #1d432e; // #1d432e;
+$메뉴호버컬러: #fddb3a;
+$반응형1400: 1400px;
+$반응형767: 767px;
+$반응형400: 400px;
+$반응형360: 360px;
+
+//3. mixin
+@mixin pos($p: absolute, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $p;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin flexLayout($justify: space-between, $gap: null, $align: null) {
+    display: flex;
+    justify-content: $justify;
+    gap: $gap;
+    align-items: $align
+}
+
+@mixin bgGradient() {
+    width: 100%;
+    height: 0%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.5+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=0);
+    /* IE6-9 */
+}
+
+@mixin respond($size) {
+    @media screen and (max-width:$size) {
+        @content;
+    }
+}
+
+.inner {
+    max-width: 1420px;
+    margin: 0 auto;
+
+    @include respond($반응형767) {
+        max-width: 95%;
+    }
+}
+
+body {
+    @include respond($반응형767) {
+        font-size: 12px;
+    }
+}
+
+//header
+header {
+    background: $메인컬러;
+    height: 100px;
+
+    @include respond ($반응형767) {
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        z-index: 1000000;
+    }
+
+    @include respond ($반응형400) {
+        height: 70px;
+    }
+
+    .inner {
+        max-width: 1420px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        @include pos($top: 15px, $left: 50%);
+        transform: translateX(-50%);
+
+        img {
+            width: 90%;
+        }
+
+        @include respond($반응형767) {
+            top: 10px;
+
+            img {
+                width: 115px;
+            }
+        }
+
+        @include respond ($반응형400) {
+            img {
+                width: 100px;
+            }
+        }
+    }
+
+    .re-navWrap {
+        display: none;
+
+        @include respond ($반응형767) {
+            display: block;
+
+            .re-nav {
+                @include flexLayout();
+                padding: 25px 20px 0;
+
+                li {
+                    position: relative;
+
+                    a {
+                        img {
+                            width: 35px;
+                        }
+                    }
+
+                    &.re-cart {
+                        a::after {
+                            content: "N";
+                            display: block;
+                            color: white;
+                            font-size: 14px;
+                            @include pos($top: 50%, $left: 50%);
+                            transform: translate(-50%, -30%);
+
+                            @include respond ($반응형400) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                @include respond ($반응형400) {
+                    padding-top: 22px;
+
+                    li {
+                        a {
+                            img {
+                                width: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menuWrap {
+                position: fixed;
+                top: 80px;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.7);
+                transform: translateX(100%);
+                transition: 0.3s;
+                z-index: 100000;
+
+                @include respond ($반응형400) {
+                    top: 70px;
+                }
+
+                &.activeMenu {
+                    transform: translateX(0);
+                    z-index: 10000000;
+                }
+
+                .re-menu {
+                    @include pos($right: 0);
+                    width: 70%;
+                    height: 70vh;
+                    min-width: 320px;
+                    background-color: #fffbef;
+                    line-height: 3;
+                    // text-indent:30px;
+                    padding: 20px;
+
+                    >li.menuLi {
+                        height: 55px;
+                        overflow: hidden;
+                        transition: 0.3s;
+                        border-bottom: 1px solid #ccc;
+                        position: relative; //i의 부모
+
+                        &.on {
+                            // height:168px;
+                            height: auto;
+
+                            >a>i {
+                                rotate: 225deg;
+                            }
+                        }
+
+                        >a {
+                            font-size: 18px;
+
+                            i {
+                                @include pos($top: 25px, $right: 20px);
+                                width: 10px;
+                                height: 10px;
+                                border-bottom: 2px solid $메뉴호버컬러;
+                                border-right: 2px solid $메뉴호버컬러;
+                                rotate: 45deg;
+                            }
+                        }
+
+                        .depth2 {
+                            background: #ccc;
+
+                            li {
+                                text-indent: 30px;
+
+                                &:hover>a {
+                                    color: white;
+                                }
+
+                                a {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+
+                    .search-wrap{
+                        @include pos($bottom:0px,$right:0);
+                        width:100%;
+
+                        form{
+                            background: #eee;
+    
+                            .form-wrap{
+                                text-indent:20px;
+                                height:60px;
+                                line-height:60px;
+    
+                                img{
+                                    width:30px;
+                                }
+    
+                                input{
+                                    padding: 10px 0;
+                                    margin: 0 20px;
+                                    border:none;
+                                    background: none;
+                                    width:60%;
+                                    font-size: 1.142857em;
+                                    text-indent:10px;
+                                }
+                                input:focus{
+                                    border-bottom: 1px solid #1a273d;
+                                    outline:none;
+                                }
+                                button{
+                                    background:none;
+                                    border: 1px solid #ccc;
+                                    padding: 5px;
+                                    color:#888;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    nav {
+        @include flexLayout();
+
+        @include respond($반응형767) {
+            display: none;
+        }
+
+        div {
+            margin-top: 35px;
+        }
+
+        a {
+            font-size: 16px;
+        }
+
+        .leftMenu {
+
+            .nav {
+                @include flexLayout($gap: 45px);
+                min-width: 320px;
+                position: relative;
+
+                li {
+                    // position: relative;
+                    height: 65px;
+
+                    >a {
+                        display: block;
+                        width: 100%;
+                        color: white;
+                        transition: 0.2s;
+                    }
+
+                    .depth1 {
+                        display: none;
+                        position: absolute;
+                        z-index: 10;
+                        background: rgba(255, 255, 255, 0.9);
+                        box-sizing: border-box;
+                        left: -10px;
+                        top: 60px;
+                        width: 375px;
+                        height: 70px;
+                        text-align: center;
+                        line-height: 70px;
+
+                        li {
+                            float: left;
+                            padding-left: 20px;
+
+                            a {
+                                color: #222;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+
+                    &:hover .depth1 {
+                        display: block;
+                    }
+                }
+
+                >li::before {
+                    // @include hoverBefore($-webkit-transition: translateX(19px), $transform: translateX(19px));
+                    content: "";
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background: $메뉴호버컬러;
+                    border-radius: 50%;
+                    opacity: 0;
+                    -webkit-transform: translateX(19px);
+                    transform: translateX(19px);
+                    -webkit-transtion: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    margin-bottom: 5px;
+                }
+
+                li:nth-child(3)::before,
+                li:nth-child(4)::before {
+                    -webkit-transform: translateX(12px);
+                    transform: translateX(12px);
+                }
+
+                li:first-child:hover::before,
+                li:nth-child(2):hover::before,
+                li:last-child:hover::before {
+                    // @include hoverEffect($-webkit-transition: translateX(19px), $transform: translateX(19px));
+                    -webkit-transform: translateX(19px);
+                    transform: translateX(19px);
+                    -webkit-transtion: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    opacity: 1;
+                }
+
+                li:nth-child(3):hover::before,
+                li:nth-child(4):hover::before {
+                    // @include hoverEffect($-webkit-transition: translateX(12px), $transform: translateX(12px));
+                    -webkit-transform: translateX(12px);
+                    transform: translateX(12px);
+                    -webkit-transtion: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    opacity: 1;
+                }
+
+                li:hover>a {
+                    color: $메뉴호버컬러;
+                }
+            }
+        }
+
+        .rightMenu {
+            .gnb {
+                @include flexLayout($gap: 45px);
+
+                li:nth-child(2) {
+                    img {
+                        display: inline-block;
+                        width: 18px;
+                        padding-bottom: 2px;
+                    }
+                }
+
+                li:last-child {
+                    position: relative;
+                    height: 65px;
+
+                    img {
+                        // display: inline-block;
+                        vertical-align: top;
+                        width: 25px;
+                    }
+
+                    .help-depth {
+                        display: none;
+                        position: absolute;
+                        z-index: 10;
+                        background: rgba(255, 255, 255, 0.9);
+                        box-sizing: border-box;
+                        right: -30px;
+                        top: 60px;
+                        width: 250px;
+                        height: 70px;
+                        text-align: center;
+                        line-height: 65px;
+
+                        li {
+                            float: left;
+                            padding-left: 30px;
+
+                            a {
+                                color: #222;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+
+                    &:hover .help-depth {
+                        display: block;
+                    }
+                }
+
+                a {
+                    color: white;
+                }
+
+                >li::before {
+                    // @include hoverBefore($-webkit-transition:translateX(19px),$transform:translateX(19px));
+                    content: "";
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background: $메뉴호버컬러;
+                    border-radius: 50%;
+                    opacity: 0;
+                    -webkit-transform: translateX(20px);
+                    transform: translateX(20px);
+                    -webkit-transtion: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    margin-bottom: 5px;
+                }
+
+                li:first-child::before {
+                    -webkit-transform: translateX(22px);
+                    transform: translateX(22px);
+                }
+
+                li:nth-child(2)::before {
+                    -webkit-transform: translateX(50px);
+                    transform: translateX(50px);
+                }
+
+                li:last-child::before {
+                    -webkit-transform: translateX(8px);
+                    transform: translateX(8px);
+                }
+
+                li:hover::before {
+                    -webkit-transform: translateX(19px);
+                    transform: translateX(19px);
+                    -webkit-transtion: all 0.2s ease-in-out;
+                    transition: all 0.2s ease-in-out;
+                    opacity: 1;
+                }
+
+                li:first-child:hover::before {
+                    -webkit-transform: translateX(22px);
+                    transform: translateX(22px);
+                }
+
+                li:nth-child(2):hover::before {
+                    -webkit-transform: translateX(50px);
+                    transform: translateX(50px);
+                }
+
+                li:last-child:hover::before {
+                    -webkit-transform: translateX(8px);
+                    transform: translateX(8px);
+                }
+
+                li:hover a {
+                    color: $메뉴호버컬러;
+                }
+            }
+        }
+    }
+}
+
+//#container
+#container {
+    overflow: hidden;
+
+    @include respond ($반응형767) {
+        position: relative;
+    }
+
+    //.mainBanner
+    .mainBanner {
+        @include flexLayout();
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        @include respond ($반응형767) {
+            display: block;
+            // position:static;
+            //relative하면 높이가 사라짐 왜지?
+            height: 90vh;
+        }
+
+        @include respond ($반응형400) {
+            // height:100vh;
+        }
+
+        >div.banner {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+
+            @include respond ($반응형767) {
+                &.banner {
+                    @include pos($top: 0, $left: 0);
+                    // opacity:0;
+                    display: none;
+                    //fade를 적용했을 때 display: none으로 해야함 => opacity x!
+                    //transition: opacity 0.5s ease-in-out;
+                    height: 100%; //height:80vh; 오ㅐ???????
+                    width: 100%;
+
+                    @include respond ($반응형400) {
+                        //height:500px;
+                        height: 100%;
+                    }
+                }
+
+                &.active {
+                    // opacity:1;
+                    display: block;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                transition: 0.5s;
+
+                @include respond ($반응형767) {
+                    object-fit: cover;
+                }
+            }
+
+            .gradient {
+                @include pos($top: 0, $left: 0);
+                background: rgba(0, 0, 0, 0.3);
+                width: 100%;
+                height: 100%;
+
+                @include respond ($반응형767) {
+                    width: 0;
+                    height: 0;
+                }
+            }
+
+            &:hover .gradient {
+                display: none;
+            }
+
+            &:hover img {
+                transform: scale(1.1);
+                //왜 세번째 배너 이미지만 적용되는가?
+                //=> absolute로 겹쳐놨는데 opacity로 줬기 때문에! =>display:none/block으로 해야함
+            }
+
+            .banner-text {
+                display: none;
+                @include pos($bottom: 30px, $right: 30px);
+                // padding: 10px 20px;
+                width: 250px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 2px;
+
+                a {
+                    font-weight: 100;
+                    color: white;
+                }
+
+                @include respond ($반응형767) {
+                    display: block;
+                    width: 300px;
+                    bottom: 170px;
+                    // top:100px; 계속 같은 방향만 가능
+                    left: 50%; //왜 양 옆이 늘어나는가?
+                    transform: translateX(-50%);
+
+                    a {
+                        font-size: 16px;
+                    }
+                }
+
+                @include respond ($반응형400) {
+                    // display:none;
+                    bottom: 150px;
+                }
+            }
+
+            &:hover>.banner-text {
+                display: block;
+            }
+
+        }
+
+        //.pagerBox {
+        //    position: relative;
+        //    bottom: -700px;
+        //하.............. => 2중으로 줘서 위치가 이상한 거였음!
+        //숫자가 -로 크게 나오면 뭔가 잘못된 것! }
+
+        .re-pager {
+            display: none;
+
+            @include respond($반응형767) {
+                @include flexLayout($gap: 20px);
+                @include pos($left: 50%, $bottom: 50px);
+                transform: translateX(-50%);
+
+                li {
+                    a {
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        background: #ccc;
+                        transition: 0.3s;
+                    }
+
+                    &.active {
+                        a {
+                            background: $메인컬러;
+                        }
+                    }
+                }
+            }
+
+            @include respond($반응형400) {
+                bottom: 100px;
+            }
+        }
+    }
+
+    //main
+    section {
+        padding: 100px 0;
+        text-align: center;
+
+        @include respond ($반응형767) {
+            padding: 70px 0;
+        }
+
+        @include respond ($반응형400) {
+            padding: 50px 0;
+        }
+
+        .title,
+        .re-title {
+            // font-size: 36px;
+            font-size: 2.57em;
+            font-weight: 500;
+
+            @include respond($반응형400) {
+                font-size: 26px;
+            }
+        }
+
+        .sub-title {
+            // font-size: 25px;
+            font-size: 1.79em;
+            font-family: 'Kalam', cursive, sans-serif;
+            font-style: italic;
+            padding-top: 30px;
+
+            @include respond ($반응형767) {
+                // font-size:20px;
+                padding-top: 15px;
+            }
+
+            @include respond($반응형400) {
+                font-size: 18px;
+                padding-top: 10px;
+            }
+        }
+    }
+
+    //.event
+    .event {
+        display: none;
+
+        @include respond ($반응형767) {
+            display: block;
+            padding-bottom: 50px;
+
+            .inner {
+                @include respond ($반응형400) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    //.brand
+    .brand {
+        @include respond ($반응형767) {
+            padding: 0 0 70px;
+        }
+
+        .inner {
+            @include flexLayout($gap: 40px);
+
+            @include respond ($반응형767) {
+                display: none;
+            }
+
+            >div {
+                flex: 1;
+                // width:430px;
+                height: 520px;
+                position: relative;
+
+                .brandImg {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+                }
+
+                .moreBtn {
+                    text-align: center;
+                    // margin: 30px 0 0;
+                    @include pos($bottom: -30px, $left: 50%);
+                    transform: translateX(-50%);
+                    z-index: 10;
+
+                    a {
+                        display: inline-block;
+                        font-size: 1.43em;
+                        font-weight: 400;
+                        border: 2px solid transparent;
+                        width: 280px;
+                        height: 60px;
+                        line-height: 55px;
+                        transition: 0.3s;
+                        position: relative;
+                        background: #83442e;
+                        color: #f8eabc;
+
+                        // span::before {
+                        //     content: "";
+                        //     display: block;
+                        //     width: 100%;
+                        //     height: 100%;
+                        //     @include pos($left: 0, $bottom: 0);
+                        //     background-color: white;
+                        //     transform-origin: 0 bottom 0;
+                        //     transform: scaleY(0);
+                        //     transition: .4s ease-out;
+                        // }
+
+                        // &:hover span::before {
+                        //     transform: scaleY(1);
+                        //     z-index: -1;
+                        // }
+
+                        &:hover {
+                            color: white;
+                            // background: #b4674b;
+                        }
+                    }
+                }
+            }
+        }
+
+        .re-inner {
+            display: none;
+
+            @include respond ($반응형767) {
+                display: block;
+
+                .re-title {
+                    color: $메인글자;
+                    padding-bottom: 20px;
+                }
+
+                .moreBrand {
+                    max-width: 767px;
+                    margin: 0 auto;
+                    width: 500px;
+                    height: 300px;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .moreBtn {
+                        @include pos($right: 20px, $bottom: 20px);
+                        display: block;
+                        padding: 10px 30px;
+                        font-size: 18px;
+                        color: white;
+                        background: rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+
+            @include respond ($반응형400) {
+                .moreBrand {
+                    width: 80vw;
+                }
+            }
+        }
+    }
+
+    .products {
+        @include flexLayout();
+        position: relative;
+        overflow: hidden;
+        text-align: start;
+        width: 100%;
+        height: 920px;
+
+        @include respond ($반응형767) {
+            padding: 0;
+            height: 80vh;
+        }
+
+        @include respond ($반응형400) {
+            height: 70vh; //높이 줄이기
+            margin: 0 0 30px;
+        }
+
+        .titleBox {
+            @include pos($top: 140px, $left: 100px);
+            z-index: 1000;
+            // font-size: 2.86em;
+            font-size: 3em;
+            color: #1d432e;
+            mix-blend-mode: difference;
+
+            @include respond ($반응형767) {
+                mix-blend-mode: normal;
+            }
+
+            .product-title {}
+
+            .product-subTitle {
+                font-family: 'Kalam', cursive, sans-serif;
+                margin: 10px 0 30px;
+                color: #1d432e;
+                mix-blend-mode: difference;
+            }
+
+            .productsMenu {
+                li {
+                    padding-bottom: 10px;
+
+                    a {
+                        font-size: 1.71em;
+                        color: white;
+                    }
+                }
+            }
+
+            @include respond ($반응형767) {
+                top: 50px;
+                left: 50px;
+            }
+
+            @include respond ($반응형400) {
+                top: 30px;
+
+                .product-title {
+                    font-size: 36px;
+                    line-height: 1.2;
+                }
+
+                .product-subTitle {
+                    margin: 20px 0;
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .half-left {
+            flex: 1;
+            height: 920px;
+            // overflow:hidden;
+            position: relative;
+
+            .bgWrap {
+                // @include flexLayout();
+                // width:400%;
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                >li {
+                    @include pos($top: 0, $left: 0);
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.5;
+                    transition: opacity 1s ease-in-out;
+                    z-index: 1;
+
+                    // &:first-child{
+                    //     opacity: 1;
+                    //     z-index: 2;
+                    // }
+                    &.new {
+                        opacity: 1;
+                        z-index: 2;
+                    }
+
+                    &.active {
+                        opacity: 1;
+                        z-index: 5;
+                    }
+
+                    >img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .btnWrap {
+                >li {
+                    padding-bottom: 30px;
+
+                    &.newActive>button {
+                        font-style: italic;
+                        text-decoration: underline;
+                    }
+
+                    button {
+                        @include pos($top: 240px, $left: 100px);
+                        border: none;
+                        background: none;
+                        // font-size: 24px;
+                        font-size: 2em;
+                        color: white;
+                        display: block;
+                        padding-bottom: 40px;
+                        cursor: pointer;
+                        z-index: 10;
+
+                        &.btnBar {
+                            top: 300px;
+                        }
+
+                        &.btnCake {
+                            top: 360px;
+                        }
+
+                        &.btnDessert {
+                            top: 420px;
+                        }
+
+                        &:focus {
+                            font-style: italic;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            @include respond ($반응형767) {
+                display: none;
+            }
+        }
+
+        .midlleWrap {
+            .middle-img {
+                //ul
+
+                .midImg {
+                    //li
+                    @include pos($top: 60%, $left: 50%);
+                    transform: translate(-50%, -60%);
+                    z-index: 1;
+                    // opacity:0;
+
+                    &:first-child {
+                        z-index: 3;
+                    }
+
+                    &.active {
+                        z-index: 100;
+                        // opacity:1;
+                    }
+                }
+            }
+
+            @include respond ($반응형767) {
+                display: none;
+            }
+        }
+
+        .half-right {
+            flex: 1;
+            // width:960px;
+            height: 920px;
+            overflow: hidden;
+
+            .rightBox {
+                @include pos();
+                z-index: 1;
+                background: #69a986;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: 0.5s opacity;
+
+                &.rightNew {
+                    z-index: 2;
+                }
+
+                &.active {
+                    z-index: 10;
+                    opacity: 1;
+                }
+
+                .rightInner {
+                    width: 700px;
+                    // height:100%;
+                    margin: 55px 0 0 200px;
+
+                    .textBox {
+                        color: white;
+
+                        .right-title {
+                            font-size: 2.57em;
+                            font-weight: 500;
+                        }
+
+                        .right-sub {
+                            font-family: 'Nanum Brush Script', cursive;
+                            font-weight: 500;
+                            // font-size: 20px;
+                            font-size: 3em;
+                            padding-top: 20px;
+                        }
+
+                        .right-text {
+                            // font-family: 'Gowun Batang', serif;
+                            margin: 30px 0 50px;
+                            font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+                            font-weight: 300;
+
+                            p {
+                                padding: 20px 0;
+
+                                span {
+                                    display: block;
+                                    // font-size: 18px;
+                                    font-size: 1.29em;
+                                }
+                            }
+                        }
+                    }
+
+                    .imgBox {
+                        @include flexLayout($gap: 20px);
+                        width: 80%;
+
+                        li {
+                            width: 160px;
+                            height: 160px;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                transition: 0.3s;
+                            }
+
+                            &:hover img {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include respond ($반응형767) {
+                display: none;
+            }
+        }
+
+        .re-product {
+            display: none;
+
+            @include respond ($반응형767) {
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .moreBtn {
+                    @include pos($left: 50%, $bottom: 70px);
+                    transform: translateX(-50%);
+                    border: 1px solid #4d050f;
+                    width: 300px;
+                    text-align: center;
+
+                    a {
+                        // font-size:20px;
+                        font-size: 2em;
+                        font-weight: 300;
+                        color: #222;
+                        display: block;
+                        padding: 10px 0; //왜 글씨가 밑으로 떨어져요?
+                        background: #4d050f;
+                        color: white;
+
+                        @include respond ($반응형400) {
+                            font-size: 18px;
+                        }
+                    }
+
+                    @include respond ($반응형400) {
+                        width: 80%;
+                        text-align: center;
+                    }
+
+                    @include respond ($반응형360) {
+                        a {
+                            padding: 10px 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .vegan {
+        position: relative;
+
+        .veganMark {
+            width: 100px;
+            @include pos($top: 110px, $left: 22%);
+
+            @include respond ($반응형767) {
+                top: 70px;
+                left: 10%;
+                width: 70px;
+            }
+
+            @include respond ($반응형400) {
+                top: 10px;
+                left: 10px;
+                width: 50px;
+            }
+        }
+
+        >.inner {
+            position: relative;
+
+            .aboutVeagn {
+                @include flexLayout($gap: 20px);
+
+                @include respond ($반응형767) {
+                    display: block;
+                    margin-left: 18%;
+                }
+
+                @include respond ($반응형400) {
+                    margin-left: 10px;
+                }
+
+                >div {
+                    margin: 30px 0;
+                    width: 460px;
+                    height: 90px;
+                    background: #7f726a;
+                    border-radius: 50px;
+                    position: relative;
+                    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+                    @include respond ($반응형767) {
+                        // height: 80px;
+                    }
+
+                    @include respond ($반응형400) {
+                        width: 100%;
+                        height: 65px;
+                    }
+
+                    img {
+                        width: 80px;
+                        @include pos($top: 50%, $left: 40px);
+                        transform: translateY(-50%);
+
+                        @include respond ($반응형400) {
+                            width: 65px;
+                        }
+                    }
+
+                    p {
+                        font-size: 1.43em;
+                        text-align: start;
+                        text-indent: 190px;
+                        padding-top: 22px;
+                        line-height: 1.2;
+
+                        @include respond ($반응형767) {
+                            font-size: 1.72em;
+                            padding-top: 23px;
+                        }
+
+                        @include respond ($반응형400) {
+                            text-indent: 140px;
+                            padding-top: 13px;
+                        }
+
+                        span {
+                            display: block;
+                            color: white;
+
+                            @include respond ($반응형400) {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    @include respond ($반응형767) {
+                        margin: 20px 0;
+                    }
+
+                    @include respond ($반응형400) {
+                        margin: 10px 0;
+                    }
+                }
+            }
+
+            @include respond ($반응형767) {
+                width: 1400px;
+                margin: 0 auto;
+            }
+
+            .veganContents {
+                //400일 때 하나씩 보이게
+                @include flexLayout($gap: 20px);
+
+                @include respond ($반응형767) {
+                    // width: 200%; => 이거 때문에 drag가 안 먹었음
+                    gap: 20px;
+                    padding-top: 20px;
+                    overflow: hidden;
+                    user-select: none;
+                }
+
+                @include respond ($반응형400) {
+                    // width:300%;
+                }
+
+                >div {
+                    // flex:1;
+                    position: relative;
+                    width: 460px;
+                    height: 630px;
+                    overflow: hidden;
+
+                    @include respond ($반응형767) {
+                        height: 450px;
+                        min-width: 446px;
+                    }
+
+                    @include respond ($반응형400) {
+                        height: 400px;
+                        width: 90%;
+                        min-width: 320px;
+                    }
+
+                    &.greenWrap {
+                        background: #9e5333;
+                    }
+
+                    &.cashewWrap {
+                        // background:#f1d9b3;
+                        background: #eee8d3;
+                    }
+
+                    &.pureWrap {
+                        background: #efdddd;
+                    }
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 360px;
+                        height: 360px;
+                        border-radius: 50%;
+                        @include pos($top: -60px, $right: -90px);
+                        transition: 0.3s;
+                    }
+
+                    @include respond ($반응형400) {
+                        &::after {
+                            width: 300px;
+                            height: 300px;
+                        }
+                    }
+
+                    &.greenWrap::after {
+                        background: #75381b;
+                    }
+
+                    &.cashewWrap::after {
+                        // background:#bd8e5a;
+                        background: #c49e6e;
+                    }
+
+                    &.pureWrap::after {
+                        background: #bd777b;
+                    }
+
+                    &:hover::after {
+                        top: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0;
+                    }
+
+                    .veganText {
+                        @include pos($top: 70px, $left: 50%);
+                        opacity: 0.1;
+                        z-index: 100;
+                        transition: 0.5s;
+                        transform: translateX(-50%);
+                        // font-family: 'Gowun Batang', serif;
+                        // font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+                        color: #222;
+                        width: 100%;
+
+                        @include respond ($반응형767) {
+                            top: 40px;
+                        }
+
+                        @include respond ($반응형400) {
+                            top: 30px;
+                        }
+
+                        .vegan-title {
+                            font-size: 2em;
+                            font-weight: 500;
+
+                            @include respond ($반응형767) {
+                                font-size: 2.2em;
+
+                                span {
+                                    display: block;
+                                }
+                            }
+
+                            @include respond ($반응형400) {
+                                padding: 10px;
+
+                                // span {
+                                //     display: block;
+                                // }
+                            }
+                        }
+
+                        .vegan-sub {
+                            padding: 40px 0 0;
+                            word-break: keep-all;
+
+                            span {
+                                line-height: 1.5;
+                                font-size: 1.43em;
+                                font-weight: 500;
+                                display: block;
+
+                                &.mo {
+                                    display: inline;
+
+                                    @include respond ($반응형767) {
+                                        display: block;
+                                    }
+                                }
+
+                                @include respond ($반응형767) {
+                                    font-size: 1.9em;
+
+                                }
+
+                                @include respond ($반응형400) {
+                                    font-size: 18px;
+                                }
+                            }
+
+                            @include respond ($반응형400) {
+                                padding: 20px 0 0;
+                            }
+                        }
+                    }
+
+                    .veganImg {
+                        @include pos($bottom: 0px, $left: 50%);
+                        z-index: 10;
+                        opacity: 0.1;
+                        transition: 0.5s;
+                        transform: translateX(-50%);
+
+                        .posImg {
+                            .splash {
+                                @include pos($bottom: 0, $left: 50%);
+                                transform: translateX(-50%);
+                                opacity: 0;
+                                transition: 0.3s;
+                                width: 425px;
+
+                                @include respond ($반응형767) {
+                                    width: 300px;
+                                }
+
+                                @include respond ($반응형400) {
+                                    opacity: 1;
+                                    width: 250px;
+                                }
+                            }
+                        }
+
+                        >.iceCream {
+                            width: 80%;
+                            @include pos($p: relative);
+                            transition: 0.3s;
+
+                            @include respond ($반응형767) {
+                                width: 50%;
+                            }
+
+                            @include respond ($반응형400) {
+                                width: 45%;
+                            }
+                        }
+                    }
+
+                    &:hover .posImg>.splash {
+                        opacity: 1;
+                    }
+
+                    &:hover .iceCream {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .greenWrap {
+                    .veganText {
+                        color: white;
+                    }
+                }
+            }
+
+            .moreBtn {
+                margin: 30px 0 0;
+
+                a {
+                    display: inline-block;
+                    border: 2px solid black;
+                    font-size: 1.67em;
+                    width: 550px;
+                    height: 60px;
+                    line-height: 60px;
+                    transition: 0.3s;
+                }
+
+                &:hover a {
+                    // background: #efefef;
+                }
+
+                @include respond ($반응형400) {
+                    a {
+                        width: 300px;
+                        height: 50px;
+                        line-height: 45px;
+                    }
+                }
+            }
+        }
+    }
+
+    .homeparty {
+        @include respond ($반응형767) {
+            padding: 30px 0 70px;
+        }
+
+        p {
+            .partyBanner {
+                width: 100%;
+                // height: 499px;
+                object-fit: cover;
+
+                @include respond ($반응형1400) {
+                    height: 499px;
+                }
+
+                @include respond ($반응형767) {
+                    display: none;
+                }
+            }
+        }
+
+        .re-partyBanner {
+            display: none;
+
+            @include respond ($반응형767) {
+                display: block;
+            }
+
+            @include respond ($반응형400) {
+                display: none;
+            }
+        }
+
+        .mo-partyBanner {
+            display: none;
+
+            @include respond ($반응형400) {
+                display: block;
+            }
+        }
+
+        .title {
+            padding-top: 50px;
+        }
+
+        .inner {
+            margin-top: 50px;
+
+            .dessertWrap {
+                @include flexLayout($gap: 20px);
+
+                @include respond ($반응형767) {
+                    // gap: 20px;
+                }
+
+                @include respond ($반응형400) {
+                    display: block;
+                    max-width: 360px;
+                    margin: 0 auto;
+                }
+
+                li {
+                    width: 700px;
+                    height: 500px;
+                    position: relative;
+
+                    @include respond ($반응형767) {
+                        flex: 1;
+                        height: 450px;
+                    }
+
+                    @include respond ($반응형400) {
+                        width: 100%;
+                        height: 40vh;
+                        margin-bottom: 10px;
+                    }
+
+                    a {
+                        .dessertTitle {
+                            @include pos($top: 40px, $left: 40px);
+                            // font-size: 30px;
+                            font-size: 2.14em;
+                            color: white;
+                            font-weight: 300;
+
+                            @include respond ($반응형400) {
+                                top: 20px;
+                                left: 20px;
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .moreBtn {
+                            @include pos($left: 50%, $top: 50%);
+                            z-index: 10;
+                            transform: translate(-50%, -50%);
+                            color: white;
+                            // font-size: 20px;
+                            font-size: 1.43em;
+                            font-weight: 300;
+                            border: 2px solid white;
+                            padding: 10px 40px;
+                            display: none;
+                            transition: 0.5s;
+
+                            @include respond ($반응형767) {
+                                padding: 0;
+                                width: 200px;
+                                height: 50px;
+                                line-height: 50px;
+                            }
+                        }
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            @include bgGradient();
+                            @include pos($bottom: 0, $left: 0);
+                            transition: 0.5s;
+                        }
+
+                        &:hover::after {
+                            height: 100%;
+                        }
+
+                        &:hover .moreBtn {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//footer
+footer {
+    background: #8f8681;
+    color: white;
+    font-size: 1.14em;
+    line-height: 1.5;
+    position:relative;
+
+    .inner {
+        padding: 30px 0;
+        @include flexLayout();
+        position: relative;
+
+        @include respond ($반응형400) {
+            display: block;
+            text-align: center;
+        }
+
+        .footLeft {
+            @include respond ($반응형400) {
+                .foot-logo {
+                    display: none;
+                }
+            }
+
+            .foot-info {
+                width: 80%;
+                margin: 50px 0;
+                @include flexLayout();
+
+                span {
+                    display: block;
+                }
+
+                .right {
+                    text-align: right;
+
+                    a {
+                        // color: #e7dddc;
+                        color: white;
+                    }
+                }
+
+                @include respond ($반응형767) {
+                    display: none;
+                }
+            }
+
+            .order-broker {
+                @include respond ($반응형767) {
+                    margin-top: 25px;
+
+                    span {
+                        display: block;
+                        font-size: 18px;
+                    }
+                }
+
+                @include respond ($반응형400) {
+                    display: none;
+                }
+            }
+
+            .copyWriter {
+                @include respond ($반응형400) {
+                    display: none;
+                }
+
+                img {
+                    width: 100px;
+                }
+
+                p {
+                    display: inline-block;
+                    text-indent: 20px;
+                }
+            }
+        }
+
+        .footRight {
+            // position:relative;
+
+            .mo-logo {
+                display: none;
+                @include pos($left: 20px, $top: 30px);
+
+                @include respond ($반응형400) {
+                    display: block;
+
+                    img {
+                        width: 100px;
+                    }
+                }
+            }
+
+            .snsWrap {
+                margin: 10px 0 50px;
+                @include flexLayout($justify: right, $gap: 50px);
+
+                @include respond ($반응형400) {
+                    margin: 10px 0 30px;
+                    // justify-content: space-evenly;
+                    gap: 10px;
+                }
+
+                li {
+                    // width: 40px;
+                    text-align:center;
+
+                    a {
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        background: $메인컬러;
+                        border-radius: 50%;
+                        line-height:50px;
+
+                        @include respond ($반응형400) {
+                            width: 40px;
+                            height:40px;
+                            line-height:40px;
+                        }
+
+                        img {
+                            width: 50%;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+
+            .footerMenu {
+                text-align: right;
+
+                @include respond ($반응형400) {
+                    text-align: center;
+                }
+
+                a {
+                    // color: #e7dddc;
+                    color: white;
+                }
+            }
+
+            .lotteCall {
+                @include pos($right: 0, $bottom: 90px);
+                // font-size: 20px;
+                font-size: 1.43em;
+
+                @include respond ($반응형767) {
+                    display: none;
+                }
+            }
+        }
+
+        .mo-copy {
+            display: none;
+
+            @include respond ($반응형400) {
+                display: block;
+                position: relative;
+
+                img {
+                    width: 100px;
+                }
+
+                p {
+                    width: 100%;
+                    @include pos($bottom: 0, $left: 50%);
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+//top-btn
+.search {
+    @include pos($p: fixed, $bottom: 120px, $right: 20px);
+    z-index: 100000;
+
+    @include respond ($반응형767) {
+        // bottom: 300px;
+        display:none;
+    }
+
+    @include respond ($반응형400) {
+        // bottom: 120px;
+    }
+
+    .search-box {
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+
+        .search-input {
+            height: 55px;
+            width: 55px;
+            border-style: none;
+            padding: 10px;
+            // font-size:14px;
+            outline: none;
+            border-radius: 50%;
+            transition: all .5s ease-in-out;
+            background-color: #b7d1cd;
+            padding-right: 40px;
+            color: #fff;
+            text-indent: 10px;
+        }
+
+        .search-input::placeholder {
+            color: #222;
+            // font-size:14px;
+            text-indent: 10px;
+        }
+
+        .search-btn {
+            width: 55px;
+            height: 55px;
+            border-style: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            color: #fff;
+            background-color: transparent;
+            pointer-events: painted;
+
+            img {
+                width: 30px;
+            }
+
+            &:focus~.search-input {
+                width: 300px;
+                border-radius: 0;
+                background-color: transparent;
+                border-bottom: 1px solid #ccc;
+                transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+            }
+        }
+
+        .search-input:focus {
+            width: 300px;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.3); //transparent; //#130f40;
+            border-bottom: 1px solid #ccc;
+            transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+        }
+    }
+}
+
+.top-btn {
+    @include pos($p: fixed, $bottom: 50px, $right: 20px);
+    width: 55px;
+    height: 55px;
+    background: #b7d1cd;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 55px;
+    z-index: 100000;
+
+    @include respond ($반응형767) {
+        bottom:300px;
+    }
+
+    @include respond ($반응형400) {
+        bottom: 50px;
+    }
+
+    a {
+        img {
+            width: 40px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: AritaDotum;
+    font-style: normal;
+    font-weight: 400;
+    /* src: url(/int/ko/resource/fonts/Arita-Dotum-Medium.eot); */
+    src:url(../font/Arita-Dotum-Medium.woff) format("woff");
+    /* src: url(/int/ko/resource/fonts/Arita-Dotum-Medium.eot?#iefix) format("embedded-opentype"), url(/int/ko/resource/fonts/Arita-Dotum-Medium.woff) format("woff"), url(/int/ko/resource/fonts/Arita-Dotum-Medium.ttf) format("truetype") */
+}
+
+@font-face {
+    font-family: AritaDotum;
+    font-style: normal;
+    font-weight: 500;
+    /* src: url(/int/ko/resource/fonts/Arita-Dotum-SemiBold.eot); */
+    src:url(../font/Arita-Dotum-Medium.woff) format("woff");
+    /* src: url(/int/ko/resource/fonts/Arita-Dotum-SemiBold.eot?#iefix) format("embedded-opentype"), url(/int/ko/resource/fonts/Arita-Dotum-SemiBold.woff) format("woff"), url(/int/ko/resource/fonts/Arita-Dotum-SemiBold.ttf) format("truetype") */
+}
+
+@font-face {
+    font-family: Buri;
+    font-style: normal;
+    font-weight: 400;
+    /* src: url(/int/ko/resource/fonts/Arita-buri-SemiBold.eot); */
+    src:url(../font/Arita-buri-SemiBold.woff) format("woff");
+    /* src: url(/int/ko/resource/fonts/Arita-buri-SemiBold.eot?#iefix) format("embedded-opentype"), url(/int/ko/resource/fonts/Arita-buri-SemiBold.woff) format("woff"), url(/int/ko/resource/fonts/Arita-buri-SemiBold.ttf) format("truetype") */
+}

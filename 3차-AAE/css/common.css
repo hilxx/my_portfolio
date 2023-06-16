@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration:none;
+    color:#333;
+}
+li{
+    list-style:none;
+}
+img, input{
+    vertical-align:middle;
+}
+button{
+    cursor:pointer;
+}
+.blind{
+    position:absolute;
+    top:-999999px;
+}
+address,i,em{
+    font-style:normal;
+}
+.clearFix::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+body{
+    font-family:"SpoqaHanSansNeo-Regular";
+    /* font-size:14px; */
+    /* letter-spacing:-0.1px; */
+}

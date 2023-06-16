@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/svg/natuur-icon.svg">
+    <title>p-Natuur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nanum+Brush+Script&family=Nanum+Gothic+Coding&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/practice.css">
+    <link rel="stylesheet" href="./css/flipclock.css">
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/flipclock.js"></script>
+    <script src="js/main_query.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1 class="logo"><a href="#void"><img src="./images/logo.png" alt="natuur logo"></a></h1>
+            <div class="re-navWrap">
+                <ul class="re-nav">
+                    <li class="re-cart"><a href="#void"><img src="./images/svg/myicon_cart(white).svg" alt=""></a></li>
+                    <li class="re-ham"><a href="#void"><img src="./images/svg/myicon_hamburger.svg" alt=""
+                                class="re-iHam"></a></li>
+                </ul>
+                <div class="menuWrap">
+                    <ul class="re-menu">
+                        <li class="menuLi">
+                            <a href="#void">이벤트<i></i></a>
+                            <ul class="depth2 clearFix">
+                                <li><a href="#void">새학기 이벤트</a></li>
+                                <li><a href="#void">나뚜루 포레스트</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuLi">
+                            <a href="#void">브랜드<i></i></a>
+                            <ul class="depth2 clearFix">
+                                <li><a href="#void">브랜드 소개</a></li>
+                                <li><a href="#void">나뚜루 B2B</a></li>
+                                <li><a href="#void">GREEN COME TRUE</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuLi">
+                            <a href="#void">제품<i></i></a>
+                            <ul class="depth2 clearFix">
+                                <li><a href="#void">NEW</a></li>
+                                <li><a href="#void">CUP/BAR</a></li>
+                                <li><a href="#void">ICEGREAM CAKE</a></li>
+                                <li><a href="#void">DESSERT</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuLi">
+                            <a href="#void">비건<i></i></a>
+                            <ul class="depth2 clearFix">
+                                <li><a href="#void">비건 아이스크림</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuLi"><a href="#void">레시피<i></i></a>
+                            <ul class="depth2 clearFix">
+                                <li><a href="#void">나뚜루 레시피</a></li>
+                                <li><a href="#void">나뚜루 디저트</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="search-wrap">
+                                <form>
+                                    <div class="form-wrap">
+                                        <img src="./images/svg/myicon_search.svg" alt="search">
+                                        <label for="mo-search"></label>
+                                        <input type="text" id="mo-search" placeholder="나뚜루 체리블라썸">
+                                        <button>검색</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav>
+                <div class="leftMenu">
+                    <ul class="nav">
+                        <li>
+                            <a href="#void">이벤트</a>
+                            <ul class="depth1 clearFix">
+                                <li><a href="#void">새학기 이벤트</a></li>
+                                <li><a href="#void">나뚜루 포레스트</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#void">브랜드</a>
+                            <ul class="depth1 clearFix">
+                                <li><a href="#void">브랜드 소개</a></li>
+                                <li><a href="#void">나뚜루 B2B</a></li>
+                                <li><a href="#void">GREEN COME TRUE</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#void">제품</a>
+                            <ul class="depth1 clearFix">
+                                <li><a href="#void">NEW</a></li>
+                                <li><a href="#void">CUP/BAR</a></li>
+                                <li><a href="#void">ICEGREAM CAKE</a></li>
+                                <li><a href="#void">DESSERT</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#void">비건</a>
+                            <ul class="depth1 clearFix">
+                                <li><a href="#void">비건 아이스크림</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#void">레시피</a>
+                            <ul class="depth1 clearFix">
+                                <li><a href="#void">나뚜루 레시피</a></li>
+                                <li><a href="#void">나뚜루 디저트</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- <div class="dot"></div> -->
+                </div>
+                <div class="rightMenu">
+                    <ul class="gnb">
+                        <li><a href="#void">NAVER</a></li>
+                        <li class="cart"><a href="#void"><img src="./images/svg/myicon_cart(white).svg" alt="cart"
+                                    class="iconCart">
+                                네이버쇼핑</a></li>
+                        <li><a href="./login.html">로그인</a></li>
+                        <li class="helpBtn"><a href="#void">
+                                <img src="./images/svg/iMenu.svg" alt="고객센터" class="iHelp"></a>
+                            <ul class="help-depth">
+                                <li><a href="#void">고객센터</a></li>
+                                <li><a href="#void">Q&amp;A</a></li>
+                                <li><a href="#void">SNS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div id="container">
+        <div class="mainBanner">
+            <div class="banner active">
+                <a href="#void">
+                    <img src="./images/mainBanner01.jpg" alt="">
+                    <div class="gradient"></div>
+                </a>
+                <p class="banner-text"><a href="#void">시그니처 더 알아보기</a></p>
+            </div>
+            <div class="banner">
+                <a href="#void">
+                    <img src="./images/mainBanner02.jpg" alt="">
+                    <div class="gradient"></div>
+                </a>
+                <p class="banner-text"><a href="#void">담꽃 X NATUUR 콜라보</a></p>
+            </div>
+            <div class="banner">
+                <a href="#void">
+                    <img src="./images/mainBanner03.jpg" alt="">
+                    <div class="gradient"></div>
+                </a>
+                <p class="banner-text"><a href="#void">WADIZ x NATUUR 비건</a></p>
+            </div>
+            <!-- <div class="pagerBox"> -->
+            <ul class="re-pager">
+                <li class="pagerItem active"><a href="#void"></a></li>
+                <li class="pagerItem"><a href="#void"></a></li>
+                <li class="pagerItem"><a href="#void"></a></li>
+            </ul>
+            <!-- </div> -->
+        </div>
+        <main>
+            <section class="event">
+                <h2 class="title blind">나뚜루 이벤트</h2>
+                <div class="inner">
+                    <!-- <div class="coupon"><a href="#void">
+                        <img src="./images/coupon1.png" alt="">
+                        <div class="clock1"></div>
+	                    <div class="message"></div>
+                    </a></div> -->
+                    <div class="coupon"><a href="#void">
+                            <img src="./images/coupon2.png" alt="">
+                            <div class="clock2"></div>
+                            <div class="message"></div>
+                        </a></div>
+                </div>
+            </section>
+            <section class="brand">
+                <h2 class="title blind">나뚜루 브랜드 소개</h2>
+                <div class="inner">
+                    <div class="aboutBrand">
+                        <a href="#void" class="brandImg"><img src="./images/greenice.png" alt="브랜드 소개"></a>
+                        <p class="moreBtn"><a href="#void"><span>나뚜루 브랜드 소개</span></a></p>
+                    </div>
+                    <div class="B2B">
+                        <a href="#void" class="brandImg"><img src="./images/B2B.jpg" alt="B2B 영업 제안 이미지"></a>
+                        <p class="moreBtn"><a href="#void"><span>나뚜루 B2B 납품 안내</span></a></p>
+                    </div>
+                    <div class="natuurCampaign">
+                        <a href="#void" class="brandImg"><img src="./images/natuurForest.jpg" alt="나뚜루 캠페인"></a>
+                        <p class="moreBtn"><a href="#void"><span>GREEN COME TRUE</span></a></p>
+                    </div>
+                </div>
+                <div class="re-inner">
+                    <h2 class="re-title">MORE NATUUR</h2>
+                    <div class="moreBrand"><a href="#void">
+                            <img src="./images/natuurForest.jpg" alt="나뚜루 캠페인">
+                            <p class="moreBtn">나뚜루 브랜드 소개</p>
+                        </a></div>
+                </div>
+            </section>
+            <section class="products">
+                <div class="titleBox">
+                    <h2 class="product-title">NATUUR'S PRODUCTS</h2>
+                    <p class="product-subTitle">PREMIUM DESSERT</p>
+                </div>
+                <div class="half-left">
+                    <!-- new display none -->
+                    <ul class="bgWrap">
+                        <li class="bg"><img src="./images/products-new.jpg" alt="new bg"></li>
+                        <li class="bg"><img src="./images/products-bar.jpg" alt="cup/bar bg"></li>
+                        <li class="bg"><img src="./images/products-cake.jpg" alt="cake bg"></li>
+                        <li class="bg"><img src="./images/products-dessert.jpg" alt="dessert bg"></li>
+                        <li class="bg new"><img src="./images/products-new.jpg" alt="new bg"></li>
+                    </ul>
+                    <ul class="btnWrap">
+                        <!-- script로 처음부터 focus 가있게끔 만들기 -->
+                        <li class="newActive"><button class="btn btnNew" type="button">NEW</button></li>
+                        <li><button class="btn btnBar" type="button">CUP / BAR</button></li>
+                        <li><button class="btn btnCake" type="button">ICECREAM CAKE</button></li>
+                        <li><button class="btn btnDessert" type="button">DESSERT</button></li>
+                    </ul>
+                </div>
+                <div class="midlleWrap">
+                    <ul class="middle-img">
+                        <li class="midImg midNew active"><img src="./images/new-img.png" alt=""></li>
+                        <li class="midImg midBar"><img src="./images/bar-img.png" alt=""></li>
+                        <li class="midImg midCake"><img src="./images/cake-img.png" alt=""></li>
+                        <li class="midImg midDessert"><img src="./images/dessert-img.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="half-right">
+                    <!-- absolute -->
+                    <div class="rightBox rightNew active">
+                        <div class="rightInner">
+                            <div class="textBox">
+                                <h3 class="right-title">NEW</h3>
+                                <p class="right-sub">"나뚜루의 신메뉴를 즐겨보세요!"</p>
+                                <div class="right-text">
+                                    <p class="text1">
+                                        <span>진한 다크체리 100%</span><span>체리 본연의 맛을 살려 더 진한 풍미!</span><span>다크 체리과육 듬뿍 과즙미
+                                            팡팡!</span><span>#체리블라썸</span>
+                                    </p>
+                                    <p class="text2">
+                                        <span>체리블라썸, 체리WITH블라썸으로</span><span>더욱 깊어진 진한 봄의 맛!
+                                            즐겨보세요!</span><span>COLORFULL
+                                            SPRING DESSERT:&#41;</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="imgBox">
+                                <li><a href="#void"><img src="./images/new-rightimg01.jpg" alt=""></a></li>
+                                <li><a href="#void"><img src="./images/new-rightimg02.jpg" alt=""></a></li>
+                                <li><a href="#void"><img src="./images/new-rightimg03.jpg" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rightBox rightBar">
+                        <div class="rightInner">
+                            <div class="textBox">
+                                <h3 class="right-title">CUP / BAR</h3>
+                                <p class="right-sub">"나뚜루와 함께 나를 위한 행복한 여행을 즐겨보세요!"</p>
+                                <div class="right-text">
+                                    <p class="text1">
+                                        <span>나뚜루는 순수한 원재료 본연의 맛을 느낄 수 있는</span><span>감성적인 프리미엄 디저트 브랜드입니다.</span>
+                                    </p>
+                                    <p class="text2">
+                                        <span>세계 각지에서 엄선한 고급 원료로</span><span>당신의 입맛에 즐거움을 더해드립니다.</span>
+                                    </p>
+                                    <p class="text3">
+                                        <span>지금 바로 즐겨보세요:&#41;</span>
+                                    </p>
+                                </div>
+                                <ul class="imgBox">
+                                    <li><a href="#void"><img src="./images/bar-rightimg01.jpg" alt=""></a></li>
+                                    <li><a href="#void"><img src="./images/bar-rightimg02.jpg" alt=""></a></li>
+                                    <li><a href="#void"><img src="./images/bar-rightimg03.jpg" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightBox rightCake">
+                        <div class="rightInner">
+                            <div class="textBox">
+                                <h3 class="right-title">ICECREAM CAKE</h3>
+                                <p class="right-sub">"나뚜루만의 프리미엄 아이스크림 케이크"</p>
+                                <div class="right-text">
+                                    <p class="text1">
+                                        <span>Inner Luxury, The True Pleasure!</span><span>자연주의 컨셉의 REAL TOPPING 아이스크림
+                                            케이크</span>
+                                    </p>
+                                    <p class="text2">
+                                        <span>REAL 과일 원물을 사용한 데코레이션과</span><span>가족, 친구들과 즐기기 좋은 사이즈!</span>
+                                    </p>
+                                    <p class="text3">
+                                        <span>사랑하는 사람과 함께 즐겨보세요:&#41;</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="imgBox">
+                                <li><a href="#void"><img src="./images/cake-rightimg01.jpg" alt=""></a></li>
+                                <li><a href="#void"><img src="./images/cake-rightimg02.jpg" alt=""></a></li>
+                                <li><a href="#void"><img src="./images/cake-rightimg031.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rightBox rightDessert">
+                        <div class="rightInner">
+                            <div class="textBox">
+                                <div class="textBox">
+                                    <h3 class="right-title">DESSERT</h3>
+                                    <p class="right-sub">"나뚜루의 다양한 디저트도 즐겨보세요!"</p>
+                                    <div class="right-text">
+                                        <p class="text1">
+                                            <span>프랑스 정통 디저트 다쿠아즈와 타르트가</span><span>나뚜루 본연의 맛과 합쳐졌다!</span>
+                                        </p>
+                                        <p class="text2">
+                                            <span>가나 초콜릿과 오트밀크를 섞어 만든 가나슈에</span><span>쌉싸름한 코코아 파우더를 뿌려
+                                                완성한</span><span>"100%
+                                                프리미엄 수제 생 초콜릿"</span>
+                                        </p>
+                                        <p class="text3">
+                                            <span>나뚜루의 다채로움을 즐겨주세요:&#41;</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="imgBox">
+                                <li><a href="#void"><img src="./images/dessert-rightimg01.jpg" alt=""></a></li>
+                                <li><a href="#void"><img src="./images/dessert-rightimg02.png" alt=""></a></li>
+                                <li><a href="#void"><img src="./images/dessert-rightimg03.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="re-product">
+                    <img src="./images/strawberry.png" alt="">
+                    <p class="moreBtn"><a href="#void">제품 더보기</a></p>
+                </div>
+            </section>
+            <section class="vegan">
+                <h2 class="title">나뚜루 비건 아이스크림</h2>
+                <p class="sub-title">NATUUR BEGIN VEGAN!</p>
+                <img class="veganMark" src="./images/veganMark.png" alt="비건 인증 마크">
+                <div class="inner">
+                    <div class="aboutVeagn">
+                        <div>
+                            <img src="./images/svg/icon-natuur-01.svg" alt="나뚜루 아이콘1">
+                            <p><span>낮은 공기 함량으로</span> <span>만들어낸 쫀득한 식감</span></p>
+                        </div>
+                        <div>
+                            <img src="./images/svg/icon-natuur-02.svg" alt="나뚜루 아이콘2">
+                            <p><span>동물성 재료 없이도</span><span>부드럽고 풍부한 질감</span></p>
+                        </div>
+                        <div>
+                            <img src="./images/svg/icon-natuur-03.svg" alt="나뚜루 아이콘3">
+                            <p><span>한국 비건인증원</span><span>비건 인증 획득</span></p>
+                        </div>
+                    </div>
+                    <div class="veganContents">
+                        <div class="greenWrap">
+                            <div class="veganText">
+                                <h3 class="vegan-title">나뚜루 비건 <span>그린티&amp;초코넛츠 파인트</span></h3>
+                                <p class="vegan-sub"><span>견과&#40;캐슈넛, 아몬드&#41; 페이스트 베이스에</span><span>초코와 녹차의 만남!</span>
+                                </p>
+                            </div>
+                            <div class="veganImg">
+                                <div class="posImg">
+                                    <img src="./images/chocosplash_ind.png" alt="" class="ch-spl splash">
+                                </div>
+                                <img src="./images/ice-greentea.png" alt="그린티초코넛츠 아이스크림" class="iceCream">
+                            </div>
+                        </div>
+                        <div class="cashewWrap">
+                            <div class="veganText">
+                                <h3 class="vegan-title">나뚜루 비건 <span>캐슈 바닐라 파인트</span></h3>
+                                <p class="vegan-sub"><span>찐 바닐라빈 향이 가득,</span> <span class="mo">고소한 캐슈넛과 만나
+                                    </span><span class="mo">이룩한 새로운 바닐라의 세계!</span>
+                                </p>
+                            </div>
+                            <div class="veganImg">
+                                <div class="posImg">
+                                    <img src="./images/vanilasplash_ind.png" alt="" class="va-spl splash">
+                                </div>
+                                <img src="./images/ice-cashew.png" alt="캐슈 바닐라 아이스크림" class="iceCream">
+                            </div>
+                        </div>
+                        <div class="pureWrap">
+                            <div class="veganText">
+                                <h3 class="vegan-title">나뚜루 비건 <span>퓨어 코코넛</span></h3>
+                                <p class="vegan-sub"><span>진하디 진한 코코넛,</span><span class="mo">맛있고 진한</span> <span
+                                        class="mo">코코넛의 맛을 느껴보세요!</span></p>
+                            </div>
+                            <div class="veganImg">
+                                <div class="posImg">
+                                    <img src="./images/coconutsplash_ind.png" alt="" class="co-spl splash">
+                                </div>
+                                <img src="./images/ice-pure.png" alt="퓨어 아이스크림" class="iceCream">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="moreBtn"><a href="#void">제품 구매하러 가기</a></p>
+                </div>
+            </section>
+            <section class="homeparty">
+                <p><img class="partyBanner" src="./images/homeparty-banner.png" alt="디저트 배너"></p>
+                <img src="./images/mobile-homeparty.png" alt="디저트 배너re" class="re-partyBanner">
+                <img src="./images/respond400-party.png" alt="디저트 배너mo" class="mo-partyBanner">
+                <h2 class="title">나뚜루 디저트</h2>
+                <p class="sub-title">Enjoy a happy trip for you with Natuur!</p>
+                <div class="inner">
+                    <ul class="dessertWrap">
+                        <li class="recipe">
+                            <a href="#void">
+                                <div class="dessertTitle">NATUUR'S RECIPE</div>
+                                <img src="./images/natuur-recipe.jpg" alt="나뚜루 팝콘 레시피">
+                                <p class="moreBtn">더 알아보기</p>
+                            </a>
+                        </li>
+                        <li class="present">
+                            <a href="#void">
+                                <div class="dessertTitle">NATUUR'S PRESENT</div>
+                                <img src="./images/dessert.png" alt="나뚜루 선물용 디저트">
+                                <p class="moreBtn">더 알아보기</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="inner">
+            <div class="footLeft">
+                <p class="foot-logo"><a href="#void"><img src="./images/logo.png" alt="foot-logo"></a></p>
+                <div class="foot-info">
+                    <div class="left">
+                        <span>사업자등록번호 220-81-62517</span>
+                        <span>대표이사 최수연</span>
+                        <span>전화 1588-3819</span>
+                        <span>호스트 서비스 제공: NAVER CLOUD</span>
+                    </div>
+                    <div class="right">
+                        <span>통신판매업신고번호 2006-경기성남-0692호</span>
+                        <span>경기도 성남시 분당구 정자일로 95, NAVER 1784,13561</span>
+                        <span>이메일 HELPCUSTOMER@NAVER.COM</span>
+                        <p><a href="#void">사업자등록정보 확인</a></p>
+                    </div>
+                </div>
+                <p class="order-broker"><span>네이버(주) 통신판매중개자이며, 통신판매의 당사자가 아닙니다.</span> <span>상품, 상품정보, 거래에 관한 의무와 책임은
+                        판매자에게 있습니다.</span></p>
+                <div class="copyWriter">
+                    <a href="#void"><img src="./images/svg/naver-logo-vector.svg" alt=""></a>
+                    <p>Copyright ©NAVER Corp.All Rights Reserved.</p>
+                </div>
+            </div>
+            <div class="footRight">
+                <div class="mo-logo">
+                    <a href="#void"><img src="./images/logo.png" alt="foot-logo"></a>
+                </div>
+                <ul class="snsWrap">
+                    <li class="facebook"><a href="#void"><img src="images/svg/sns-icon_face.svg" alt=""></a></li>
+                    <li class="instagram"><a href="#void"><img src="images/svg/sns-icon_insta.svg" alt=""></a></li>
+                </ul>
+                <ul class="footerMenu">
+                    <li><a href="#void">공지사항</a></li>
+                    <li><a href="#void">FAQ</a></li>
+                    <li><a href="#void"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#void">이용약관</a></li>
+                    <li><a href="#void">쇼핑&amp;페이고객센터</a></li>
+                </ul>
+                <div class="lotteCall">
+                    <p>롯데제과(주) <strong>02-2670-6384</strong></p>
+                </div>
+            </div>
+            <div class="mo-copy">
+                <a href="#void"><img src="./images/svg/naver-logo-vector.svg" alt=""></a>
+                <p>Copyright ©NAVER Corp.All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div class="search">
+        <div class="search-box">
+            <button class="search-btn"><img src="./images/svg/myicon_search.svg" alt="searchBtn"></button>
+            <input type="text" class="search-input" placeholder="나뚜루 체리블라썸...">
+        </div>
+    </div>
+    <p class="top-btn"><a href="#"><img src="./images/svg/top-arrow.svg" alt="top-arrow"></a></p>
+</body>
+
+</html>
