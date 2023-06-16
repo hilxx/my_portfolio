@@ -1,0 +1,357 @@
+@media screen and (max-width:767px){
+    /* 1. 제거하기 */
+    #nav, .re-del, .fixed-btn, .top-btn, footer::after{
+        display:none;
+    }
+    /* 2. body 글자크기 바꾸기 */
+    body{
+        font-size:15px;
+    }
+    /* 3. 보여주기 */
+    .ham-btn, .re-appear, #re-nav{
+        display:block;
+    }
+    /* 4. 100% 만들기 */
+    /* header */
+    header{
+        height:70px;
+    }
+    .logo{
+        padding-top:15px;
+    }
+    .logo img{
+        vertical-align:top;
+    }
+    header .inner{
+        padding: 0 20px;
+    }
+    .ham-btn{
+        float:right;
+        width:35px;
+    }
+    .ham-btn img{
+        width:80%;
+    }
+    header>.inner{
+        position:relative;
+    }
+    /* nav 활성화 했을 때 배경과 구분이 되게 배경색주기 */
+    nav{
+        background: rgba(0,0,0,0.5);
+        position:fixed;
+        width:100%;
+        height:100vh;
+        right:-100%;
+        top:0;
+    }
+    #re-nav{
+        background-color:white;
+        width:80vw;
+        height:100vh;
+        position:fixed;
+        right:-100%;
+        top:0;
+    }
+    .search-wrap .close-btn{
+        float:right;
+        margin-right:20px;
+    }
+    .search-wrap .close-btn img{
+        width:90%;
+    }
+    .search-wrap form{
+        background: rgb(228, 236, 240);
+    }
+    .form-wrap{
+        text-indent:30px;
+    }
+    .form-wrap input{
+        padding: 10px 0;
+        margin: 0 20px;
+        border:none;
+        background: none;
+        width:65%;
+        font-size: 1.142857em;
+        text-indent:10px;
+    }
+    .form-wrap input:focus{
+        border-bottom: 1px solid #1a273d;
+        outline:none;
+    }
+    .form-wrap button{
+        background:none;
+        border: 1px solid #ccc;
+        padding: 5px;
+        color:#888;
+    }
+    .nav-list>li{
+        text-indent:30px;
+        border-bottom:1px solid #eee;
+        position:relative;
+    }
+    .nav-list a{
+        font-size:1.285717em;
+        font-weight:500;
+    }
+    .nav-list>li>a>i{
+        position:absolute;
+        width:10px;
+        height:10px;
+        top:35px;
+        /* top:45% -> %로 주면 버튼을 눌렀을 때 같이 움직이기 때문에
+        px로 고정 사이즈를 줘야한다. */
+        right:20px;
+        border-bottom: 2px solid rgb(128, 152, 163);
+        border-right: 2px solid rgb(128, 152, 163);
+        rotate:45deg;
+    }
+    .nav-list>li.active>a>i{
+        rotate:225deg;
+    }
+    .nav-list .depth3{
+        display:none;
+        line-height:35px;
+        padding:10px 0;
+        background: rgb(228, 236, 240);
+    }
+    .nav-list .depth3>li{
+        text-indent:65px;
+    }
+    .nav-list .depth3>li:hover>a{
+        color:rgb(131, 130, 130);
+    }
+    .nav-list .depth3 a{
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 1em;
+        font-weight:400;
+        transition:0.3s;
+    }
+    .help{
+        position:fixed;
+        bottom:0;
+        background: rgb(228, 236, 240);
+        padding:10px 0;
+        border-top:1px solid #ccc;
+    }
+    .help>.help-list{
+        display: flex;
+        justify-content: space-evenly;
+        text-align:center;
+    }
+    .help-list>li{
+        width:20%;
+    }
+    .help-list>li img{
+        width:30%;
+    }
+    .help-list>li span{
+        display:block;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size:1.285717em;
+    }
+    /* #container */
+    .subPage-banner{
+        height:550px;
+    }
+    .subPage-banner .re-appear{
+        height:100%;
+    }
+    .subPage-banner .re-appear img{
+        /* height:100%;
+        object-fit:cover; */
+        object-fit:cover;
+        height:100%;
+    }
+    /* main */
+    main>.inner{
+        overflow:hidden;
+        margin: 70px auto;
+    }
+    /* .category-wrap */
+    .category-wrap{
+        display:inline-block;
+        margin:0;
+    }
+    .category-wrap>.group{
+        float:left;
+        margin:0 0 30px 20px;
+    }
+    .category-wrap img{
+        transform:rotate(90deg);
+    }
+    .category-wrap>.ctg-list{
+        float:left;
+        background: #dde0ea;
+        width:100%;
+        height:80px;
+        line-height:60px;
+        overflow:hidden;
+        padding: 0 30px;
+        margin-bottom: 50px;
+    }
+    .category{
+        gap:70px;
+        padding: 10px 0;
+    }
+    .category>li:first-child{
+        padding:0 40px 0 0;
+    }
+    .category li:nth-child(2){
+        width:130px;
+    }
+    .category li:nth-child(3), .category li:nth-child(6), .category li:nth-child(9){
+        width:240px;
+    }
+    /* .product-wrap */
+    .product-wrap{
+        padding: 0 20px;
+        width:100%;
+    }
+    .product-list{
+        grid-template-columns: repeat(2,minmax(100px, 50%));
+        row-gap:70px;
+        column-gap:20px;
+    }
+    .product-list>li{
+        /* width:90%; */
+        height:600px;
+    }
+    /* .product-list .item-name, .product-list .cost{
+        font-size:1.86666em;
+    } */
+    .product-list .capacity{
+        bottom:170px;
+    }
+    /* .product-list .capacity, .product-list .item-enName{
+        font-size:1.6em;
+    } */
+    .product-list .text-box{
+        width:100%;
+    }
+    .product-list .item-enName{
+        /* width:50%; */
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+    .product-wrap .pager{
+        justify-content: right;
+        margin-top:50px;
+    }
+    /* footer */
+    footer{
+        height:200px;
+    }
+    .foot-bottom{
+        display:block;
+        padding:0;
+        position:relative;
+    }
+    .foot-left .copy{
+        position:absolute;
+        left:50%;
+        bottom:-60px;
+        transform:translateX(-50%);
+        font-size:1.857em;
+        width:100%;
+        text-align:center;
+    }
+    .foot-sns{
+        padding: 30px 0 0;
+    }
+    .foot-sns>.foot-sns-list{
+        padding: 0 50px;
+    }
+    .foot-sns-list li{
+        width:20%;
+    }
+    .foot-sns-list li img{
+        width:70%;
+    }
+}
+@media screen and (max-width:400px){
+    .re-appear{
+        display:none;
+    }
+    .mo-appear{
+        display:block;
+    }
+    #re-nav{
+        height:100vh;
+    }
+    .form-wrap{
+        text-indent:20px;
+    }
+    .form-wrap img{
+        width:40px;
+    }
+    .form-wrap input{
+        margin: 0 10px;
+        width:50%;
+        text-indent:0;
+    }
+    .form-wrap button{
+        margin-left:20px;
+    }
+    .nav-list a{
+        font-size:1.2857em;
+    }
+    .help{
+        padding:27px 0;
+    }
+    .help-list>li{
+        width:25%;
+    }
+    .help-list>li img{
+        width: 50%;
+    }
+    .help-list>li span{
+        font-size:1.1457em;
+    }
+    .subPage-banner .mo-appear{
+        height:100%;
+    }
+    .subPage-banner .mo-appear img{
+        object-fit:cover;
+        height:100%;
+    }
+    .category{
+        gap:30px;
+    }
+    .product-list{
+        gap:20px;
+    }
+    .product-list>li{
+        height:345px;
+    }
+    .product-list .img-wrap{
+        height:180px;
+    }
+    .product-list .item-name{
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+    .product-wrap .pager{
+        margin-top:0;
+        padding-top:50px;
+    }
+    footer{
+        height:180px;
+    }
+    .foot-sns>.foot-sns-list{
+        gap:20px;
+    }
+    .foot-sns-list li img{
+        width:100%;
+    }
+    .foot-left .copy{
+        font-size:1.14em;
+    }
+    .top-btn .re-top-btn{
+        width:50px;
+        height:50px;
+        right:0;
+        bottom: 70px;
+    }
+}

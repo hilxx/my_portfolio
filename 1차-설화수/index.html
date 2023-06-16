@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://hileehosting.dothome.co.kr/">
+    <meta property="og:title" content="Content Title">
+    <!-- 이미지 사이즈 200x120 -->
+    <meta property="og:image" content="https://example.com/images/svg/openGraph_logo.svg">
+    <meta property="og:description" content="Description Here">
+    <meta property="og:site_name" content="Site Name">
+    <meta property="og:locale" content="en_US">
+    <link rel="icon" href="./images/icon-sulwhasoo.svg">
+
+    <title>sulwhasoo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/respond.css">
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="js/main2.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="inner clearFix">
+            <h1 class="logo"><a href="#void"><img src="./images/header-logo.png" alt="sul-logo"></a></h1>
+            <nav>
+                <div id="re-nav">
+                    <div class="search-wrap">
+                        <!-- <div class="search-head clearFix">
+                            <p class="close-btn"><a href="#void"><img src="./images/close-btn.png"
+                                        alt="close-btn"></a></p>
+                        </div> -->
+                        <form>
+                            <div class="form-wrap">
+                                <img src="./images/i-search.png" alt="search">
+                                <label for="mo-search"></label>
+                                <input type="text" id="mo-search" placeholder="자음생세럼, 자음생크림">
+                                <button>검색</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="mo-nav">
+                        <ul class="nav-list">
+                            <li><a href="#void">SIGNATURE</a></li>
+                            <li><a href="#void">BRAND STORY<i></i></a>
+                                <ul class="depth3">
+                                    <li><a href="#void">브랜드 빌리프</a></li>
+                                    <li><a href="#void">브랜드 캠페인</a></li>
+                                    <li><a href="#void">뷰티 프롬 컬쳐</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#void">BEST SELLER</a></li>
+                            <li><a href="#void">PRODUCT<i></i></a>
+                                <ul class="depth3">
+                                    <li><a href="./product.html">스킨케어</a></li>
+                                    <li><a href="#void">메이크업</a></li>
+                                    <li><a href="#void">남성</a></li>
+                                    <li><a href="#void">진설</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="help">
+                        <ul class="help-list">
+                            <li><a href="#void"><img src="./images/myicon_member.svg" alt="log-in"><span>로그인</span></a>
+                            </li>
+                            <li><a href="#void"><img src="./images/myicon_cart.svg" alt="장바구니"><span>장바구니</span></a>
+                            </li>
+                            <li><a href="#void"><img src="./images/myicon_store.svg" alt=""><span>매장찾기</span></a></li>
+                            <li><a href="#void"><img src="./images/myicon_question.svg" alt=""><span>고객센터</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="nav" class="clearFix">
+                    <ul>
+                        <li><a href="#void">signature</a></li>
+                        <li><a href="#void">brand story</a>
+                            <ul class="depth1">
+                                <li><a href="#void">브랜드 빌리프</a></li>
+                                <li><a href="#void">브랜드 캠페인</a></li>
+                                <li><a href="#void">뷰티 프롬 컬쳐</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#void">best seller</a></li>
+                        <li><a href="product.html">product</a>
+                            <ul class="depth1">
+                                <li><a href="#void">스킨케어</a></li>
+                                <li><a href="#void">메이크업</a></li>
+                                <li><a href="#void">남성</a></li>
+                                <li><a href="#void">진설</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="gnb-wrap re-del">
+                <ul class="gnb">
+                    <li class="language"><a href="#void"><img src="./images/lang.png" alt="language"></a></li>
+                    <li class="search"><a href="#void"><img src="./images/i-search.png" alt="search"></a></li>
+                </ul>
+                <div class="search-wrap">
+                    <form>
+                        <div class="form-wrap">
+                            <img src="./images/i-search.png" alt="" class="i-search">
+                            <label for="search"></label>
+                            <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+                            <button>검색</button>
+                        </div>
+                        <!-- div 밖에 close 넣고 form에 flex 주기 -->
+                        <p class="close"><a href="#void"><img src="./images/close-btn.png" alt="close-btn"></a></p>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="ham-btn">
+                <p><a class="hamBtn" href="#void"><img src="./images/ham-btn.png" alt=""></a></p>
+            </div> -->
+            <div class="hamClose">
+                <a class="hamBtn" href="#void"></a>
+            </div>
+        </div>
+    </header>
+    <!-- #container -->
+    <div id="container">
+        <div class="mainBanner">
+            <ul class="banner">
+                <li><a href="#void">
+                        <div class="img-box">
+                            <img src="./images/mainBanner_01.jpg" alt="banner1">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="sul-logo re-del"><img src="./images/banner-title.png" alt="banner1-logo"></h2>
+                            <h3 class="re-logo"><img src="./images/mo-logo.svg" alt="mo-banner-logo"></h3>
+                            <p class="sub-title">to the Ageless Beauty Beyond Time</p>
+                            <p class="text re-del">여성의 아름다움은 계속 진화합니다. 과거의 한 순간에 머무르지 않습니다.<br>
+                                설화수는 이 믿음으로 본연의 아름다움을 찾아 나섰습니다.</p>
+                            <p class="re-text">여성의 아름다움은 계속 진화합니다.<br> 과거의 한 순간에 머무르지 않습니다.<br>
+                                설화수는 이 믿음으로 본연의 아름다움을 찾아 나섰습니다.</p>
+                        </div>
+                    </a>
+                </li>
+                <li><a href="#void">
+                        <div class="img-box">
+                            <img src="./images/mainBanner_02.jpg" alt="banner2">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="sul-logo re-del"><img src="./images/banner-logo.png" alt="banner2-logo"></h2>
+                            <h3 class="re-logo"><img src="./images/sul-logo(mo).svg" alt="mo-banner2-logo"></h3>
+                            <p class="sub-title">Precious Material of Asian</p>
+                            <p class="text del">아시아의 귀한 원료</p>
+                        </div>
+                    </a></li>
+                <li><a href="#void">
+                        <div class="img-box">
+                            <img src="./images/mainBanner_03.jpg" alt="banner3">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="sul-logo re-del"><img src="./images/banner-logo.png" alt="banner3-logo"></h2>
+                            <h3 class="re-logo"><img src="./images/sul-logo(mo).svg" alt="mo-banner3-logo"></h3>
+                            <p class="sub-title">Aesthetics of Apricot flower</p>
+                            <p class="text del">매화의 미학</p>
+                        </div>
+                    </a></li>
+                <li><a href="#void">
+                        <div class="img-box">
+                            <img src="./images/mainBanner_04.jpg" alt="banner4">
+                        </div>
+                        <div class="text-box">
+                            <h2 class="sul-logo re-del"><img src="./images/banner-logo.png" alt="banner4-logo"></h2>
+                            <h3 class="re-logo"><img src="./images/sul-logo(mo).svg" alt="mo-banner4-logo"></h3>
+                            <p class="sub-title">Holistic Beauty</p>
+                            <p class="text del">아시아를 넘어 세계로</p>
+                        </div>
+                    </a></li>
+            </ul>
+            <ul class="pager re-del">
+                <li class="pager-act"><a href="#void">1</a></li>
+                <li><a href="#void">2</a></li>
+                <li><a href="#void">3</a></li>
+                <li><a href="#void">4</a></li>
+            </ul>
+            <div class="scroll-btn re-del">
+                <p class="scroll">scroll down</p>
+                <div class="img-ani">
+                    <img src="./images/scroll-img.png" alt="scroll">
+                </div>
+            </div>
+        </div>
+        <main>
+            <!-- <div class="inner"> -->
+            <section class="signature">
+                <h2 class="re-title">signature</h2>
+                <div class="serum-wrap inner">
+                    <h3 class="title re-del">SERUM EX</h3>
+                    <img class="re-del" src="./images/title-arrow-right.png" alt="title-arrow-right">
+                    <div class="content">
+                        <div class="img-wrap">
+                            <img class="main1-serum" src="./images/main1-Serum.jpg" alt="main1-img">
+                            <img class="re-main1-serum" src="./images/mo-main1-Serum.jpg" alt="respond-main1-serum">
+                        </div>
+                        <div class="text-box re-del">
+                            <h3 class="sig-title">자음생세럼</h3>
+                            <p class="sub">Concentrated Ginseng Renewing Serum EX</p>
+                            <p class="text">풍부한 영양감의 쫀쫀한 텍스처<br>
+                                바르는 순간 빠른 흡수력을 자랑하며 끈적이지 않고<br>
+                                산뜻하게 마무리됩니다<br>
+                                피부 깊은 곳부터 작용한 진세노믹스™가<br>
+                                피부 치밀도, 탄력, 주름을 개선해<br>
+                                노화 고민을 종합적으로 케어해 줍니다<br>
+                                <span>#채우고세우고당기는 #3중탄력세럼</span>
+                            </p>
+                            <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                        </div>
+                        <div class="re-text-box">
+                            <h3 class="title">SERUM EX</h3>
+                            <h3 class="sig-title">자음생세럼</h3>
+                            <p class="sub">Concentrated Ginseng Renewing Serum EX</p>
+                            <span class="del">#채우고세우고당기는 #3중탄력세럼</span>
+                            <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cream-wrap">
+                    <div class="title-box re-del">
+                        <h3 class="title">CREAM EX</h3>
+                        <img src="./images/title-arrow-left.png" alt="title-arrow-left" class="title-arrow-left">
+                    </div>
+                    <div class="img-wrap">
+                        <img src="./images/main2-cream.jpg" alt="main2-img">
+                    </div>
+                    <div class="text-box re-del">
+                        <h3 class="sig-title">자음생크림 소프트</h3>
+                        <p class="sub">Concentrated Ginseng Renewing Cream EX</p>
+                        <p class="text">효능은 강력하게, 감각은 산뜻하게<br>
+                            산뜻한 인삼꽃 향의 소프트한 텍스처가<br>
+                            끈적임없이 깔끔하게 마무리되는 크림.<br>
+                            피부를 위협하는 노화 요인으로부터<br>
+                            자생력을 강화시켜 시간의 흐름에도 흔들리지 않는<br>
+                            힘있는 피부를 선사합니다.<br>
+                            <span>#3중탄력 #No.1안티에이징크림</span>
+                        </p>
+                        <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                    </div>
+                    <div class="re-text-box">
+                        <h3 class="title">CREAM EX</h3>
+                        <h3 class="sig-title">자음생크림 소프트</h3>
+                        <p class="sub">Concentrated Ginseng Renewing Cream EX</p>
+                        <span class="del">#3중탄력 #No.1안티에이징크림</span>
+                        <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                    </div>
+                </div>
+                <div class="mo-cream-wrap inner">
+                    <div class="content">
+                        <div class="img-wrap">
+                            <img class="main2-cream" src="./images/main2-cream(mo).jpg" alt="main2-img">
+                        </div>
+                        <div class="re-text-box">
+                            <h3 class="title">CREAM EX</h3>
+                            <h3 class="sig-title">자음생크림 소프트</h3>
+                            <p class="sub">Concentrated Ginseng Renewing Cream EX</p>
+                            <span class="del">#3중탄력 #No.1안티에이징크림</span>
+                            <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ltd-wrap inner">
+                    <h3 class="title re-del">2023 LTD EDITION</h3>
+                    <img class="re-del" src="./images/title-arrow-long-right.png" alt="title-arrow-long-right">
+                    <div class="content">
+                        <div class="img-wrap">
+                            <img class="main3-ltd" src="./images/main3-LTD.jpg" alt="main3-img">
+                            <img class="re-main3-ltd" src="./images/mo-main3-ltd.jpg" alt="mobile-main3-ltd">
+                        </div>
+                        <div class="text-box re-del">
+                            <h3 class="sig-title">윤조에센스 토끼의 해 에디션</h3>
+                            <p class="sub">First Care Activating Serum 2023 LNY Limited Edition</p>
+                            <p class="text">HAPPY NEW YEAR FROM SULWHASOO<br>
+                                윤조에센스 토끼의 해 에디션<br>
+                                풍요와 행복을 나타내는 토끼 한쌍과<br>
+                                추운 겨울을 견뎌낸 매화의 만남이 2023년<br>
+                                윤조에센스 리미티드 에디션으로 탄생하였습니다<br>
+                                설화수와 함께 2023년 올 한해, 생동하는 희망과<br>
+                                넘쳐나는 풍요가 가득하시길 기원합니다.<br>
+                                <span>#퍼스트에센스 #설화수NO.1에센스</span>
+                            </p>
+                            <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                        </div>
+                        <div class="re-text-box">
+                            <h3 class="title">2023 LTD EDITION</h3>
+                            <h3 class="sig-title">윤조에센스 토끼의 해 에디션</h3>
+                            <p class="sub">First Care Activating Serum 2023 LNY Limited Edition</p>
+                            <span class="del">#퍼스트에센스 #설화수NO.1에센스</span>
+                            <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="brand-story">
+                <h2 class="re-title">brand story</h2>
+                <p class="re-sub">SULWHASOO WITH GINSENOMICS</p>
+                <!-- 색만 white -->
+                <div class="img-wrap">
+                    <img class="pc-brand-story" src="./images/brand-story.jpg" alt="brand-bg">
+                    <a href="#void"><img class="re-brand-story" src="./images/mo-brand-story.png" alt="re-brand-bg"></a>
+                </div>
+                <div class="text-box re-del">
+                    <h2 class="title">SULWHASOO WITH GINSENOMICS</h2>
+                    <p class="brand-text">Ginsenomics™는 설화수 인삼 연구의 정수입니다.<br>
+                        설화수는 고려 인삼의 희귀한 사포닌을 추출하여,<br>
+                        6,000배 농축한 활성 뷰티 사포닌을 만들었습니다.<br>
+                        이는 인삼의 힘을 피부로 전하는 독자적 기술의 결정체입니다.<br>
+                    </p>
+                    <p class="more-btn"><a href="#void"><img src="./images/more-btn(padding-right).png"
+                                alt="more-btn">BRAND
+                            STORY</a></p>
+                </div>
+            </section>
+            <section class="best-seller">
+                <h2 class="title re-del">BEST SELLER</h2>
+                <p class="sub-title re-del">설화수에서 가장 사랑받는 베스트셀러 제품을 소개합니다.</p>
+                <div class="re-title-box">
+                    <h2 class="re-title">best-seller</h2>
+                    <p class="re-sub">설화수에서 가장 사랑받는<br>베스트셀러 제품을 소개합니다.</p>
+                </div>
+                <div class="re-box">
+                    <img src="./images/mo-best.jpg" alt="mobile-best">
+                    <p class="view-more"><a href="#void">VIEW MORE</a></p>
+                </div>
+                <div class="slide-wrap inner">
+                    <ul class="slide-list">
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-cleansing(center).png" alt="순행클렌징폼 center"
+                                        class="center">
+                                    <img src="./images/best-seller-cleansing.png" alt="순행클렌징폼" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">순행클렌징폼</h3>
+                                    <!-- 한번 더 감싼 이유: center가 아닐 때 숨겨놓으려고 display:none; -->
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">용량 200ml, 400ml</span>
+                                            <span class="cost">42,000원</span>
+                                        </div>
+                                        <p class="best-text">수분을 머금은 거품이 피부 노폐물과 미세먼지를 없애고 촉촉함은 유지시켜주는 마일드 클렌징 폼</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-cream(center).png" alt="자음생크림 center" class="center">
+                                    <img src="./images/best-seller-cream.png" alt="자음생크림" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">자음생크림</h3>
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">용량 30ml, 60ml</span>
+                                            <span class="cost">270,000원</span>
+                                        </div>
+                                        <p class="best-text">활성 뷰티 사포닌 GINSENOMICS의 피부자생력으로 더욱 강력해진 3중 탄력 안티에이징 크림
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-serum(center).png" alt="자음생세럼 center" class="center">
+                                    <img src="./images/best-seller-serum.png" alt="자음생세럼" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">자음생세럼</h3>
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">용량 30ml 10만개, 50ml 19만개 기준</span>
+                                            <span class="cost">145,000원</span>
+                                        </div>
+                                        <p class="best-text">10만개의 진세노믹스 캡슐로 빠르게 차오르는 3중 탄력 안티에이징</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-sangbeak(center).png" alt="상백크림 center"
+                                        class="center">
+                                    <img src="./images/best-seller-sangbeak.png" alt="상백크림" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">상백크림</h3>
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">용량 30ml, 50ml</span>
+                                            <span class="cost">85,000원</span>
+                                        </div>
+                                        <p class="best-text">자외선, 유해환경 자극으로부터 피부를 강력하게 방어함과 동시에 편하게 지켜주는 저자극 브라이트닝
+                                            선크림</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-cushion(center).png" alt="퍼펙팅쿠션 center"
+                                        class="center">
+                                    <img src="./images/best-seller-cushion.png" alt="퍼펙팅쿠션" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">퍼펙팅쿠션</h3>
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">용량 15g*2</span>
+                                            <span class="cost">80,000원</span>
+                                        </div>
+                                        <p class="best-text">하루종일 완벽하고 편안하게 지속되는 럭셔리 커버 쿠션</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-essense(center).png" alt="에센스 center" class="center">
+                                    <img src="./images/best-seller-essense.png" alt="에센스" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">윤조에센스</h3>
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">용량 30ml, 60ml, 90ml</span>
+                                            <span class="cost">140,000원</span>
+                                        </div>
+                                        <p class="best-text">피부 능력 활성화를 통해 피부 건강을 전반적으로 개선하여 건강한 윤기를 선사하는 퍼스트 에센스
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-relax(center).png" alt="데일리루틴 center" class="center">
+                                    <img src="./images/best-seller-relax.png" alt="데일리루틴" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">에센셜 컴포트 데일리 루틴</h3>
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">자음2종 150ml+125ml</span>
+                                            <span class="cost">126,000원</span>
+                                        </div>
+                                        <p class="best-text">충만한 보습으로 피부 본연의 건강함을 찾아주는 에션셜 스킨케어 세트
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/best-seller-first(center).png" alt="퍼스트 케어 center"
+                                        class="center">
+                                    <img src="./images/best-seller-first.png" alt="퍼스트 케어" class="smaller">
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="best-title">나의 첫 설화수 세트</h3>
+                                    <div class="active-text-box">
+                                        <div class="box">
+                                            <span class="grey">옹량 1Set</span>
+                                            <span class="cost">140,000원</span>
+                                        </div>
+                                        <p class="best-text">설화수를 처음 경험하는 당신에게 추천하는 퍼스트케어 루틴 세트
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="arrow">
+                    <li class="left"><a href="#void"></a></li>
+                    <li class="right"><a href="#void"></a></li>
+                </ul>
+            </section>
+            <section class="product">
+                <h2 class="title">PRODUCT</h2>
+                <p class="sub-title re-del">설화수와 함께, 삶의 모든 순간에서 본연의 아름다움을 누려보세요.</p>
+                <p class="re-sub">설화수와 함께, 삶의 모든 순간에서<br> 본연의 아름다움을 누려보세요.</p>
+                <div class="product-wrap inner">
+                    <ul class="product-list">
+                        <li class="skincare">
+                            <a href="#void">
+                                <div class="img-box">
+                                    <div class="hover">
+                                        <img src="./images/product-skincare-hover.png" alt="skincare-hover">
+                                    </div>
+                                </div>
+                                <div class="circle">
+                                    <img src="./images/product-skincare.png" alt="skincare">
+                                </div>
+                                <div class="text-box">
+                                    <p class="list-title">skincare</p>
+                                    <p class="list-text">설화수의 스킨케어 전 제품을 제품유형별, 피부고민별, 제품라인별로 만나보세요.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="makeup">
+                            <a href="#void">
+                                <div class="img-box">
+                                    <div class="hover">
+                                        <img src="./images/product-makeup-hover.png" alt="makeup-hover">
+                                    </div>
+                                </div>
+                                <div class="circle">
+                                    <img src="./images/product-makeup.png" alt="makeup">
+                                </div>
+                                <div class="text-box">
+                                    <p class="list-title">makeup</p>
+                                    <p class="list-text">설화수의 메이크업 전 제품을 제품 유형별로 만나보세요.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="homme">
+                            <a href="#void">
+                                <div class="img-box">
+                                    <div class="hover">
+                                        <img src="./images/product-homme-hover.png" alt="homme-hover">
+                                    </div>
+                                </div>
+                                <div class="circle">
+                                    <img src="./images/product-homme.png" alt="homme">
+                                </div>
+                                <div class="text-box">
+                                    <p class="list-title">homme</p>
+                                    <p class="list-text">정양단과 인삼추출물로 피부를 관리하세요.</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="jinseol">
+                            <a href="#void">
+                                <div class="img-box">
+                                    <div class="hover">
+                                        <img src="./images/product-jinseol-hover.png" alt="jinseol-hover">
+                                    </div>
+                                </div>
+                                <div class="circle">
+                                    <img src="./images/product-jinseol.png" alt="jinseol">
+                                </div>
+                                <div class="text-box">
+                                    <p class="list-title">jinseol</p>
+                                    <p class="list-text">설화수의 프리미엄 한방 안티에이징 제품들로 깊이 있는 촉촉함을 선사해드립니다.</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- <div class="product-list">
+                        <h4 class="product-title">skin care</h4>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <div class="hover">
+                                        <img src="./images/product-skincare-hover.png" alt="skincare-hover"
+                                        class="hover-img">
+                                    </div>
+                                </div>
+                                <div class="img">
+                                    <img src="./images/product-skincare.png" alt="skincare">
+                                </div>
+                            </a>
+                        <p class="product-text">
+                            설화수의 스킨케어 전 제품을 제품유형별, 피부고민별, 제품라인별로 만나보세요.
+                            2줄로 보이게끔
+                        </p>
+                    </div> -->
+                    <!-- <div class="product-list active">
+                        <h4 class="product-title">make up</h4>
+                        <div class="img-box">
+                            <a href="#void">
+                                <div>
+                                    <img src="./images/product-makeup-hover.png" alt="makeup-hover" class="hover-img">
+                                </div>
+                                <img src="./images/product-makeup.png" alt="makeup">
+                            </a>
+                        </div>
+                        <p class="product-text">
+                            설화수의 메이크업 전 제품을 제품 유형별로 만나보세요.
+                        </p>
+                    </div>
+                    <div class="product-list">
+                        <h4 class="product-title">homme</h4>
+                        <div class="img-box">
+                            <a href="#void">
+                                <div>
+                                    <img src="./images/product-homme-hover.png" alt="homme-hover" class="hover-img">
+                                </div>
+                                <img src="./images/product-homme.png" alt="homme">
+                            </a>
+                        </div>
+                        <p class="product-text">
+                            정양단과 인삼추출물로 피부를 관리하세요.
+                        </p>
+                    </div>
+                    <div class="product-list">
+                        <h4 class="product-title">TIMETREASURE</h4>
+                        <div class="img-box">
+                            <a href="#void">
+                                <div>
+                                    <img src="./images/product-jinseol-hover.png" alt="jinseol-hover" class="hover-img">
+                                </div>
+                                <img src="./images/product-jinseol.png" alt="jinseol">
+                            </a>
+                        </div>
+                        <p class="product-text">
+                            설화수의 프리미엄 한방 안티에이징 제품들로 깊이 있는 촉촉함을 선사해드립니다.
+                        </p>
+                    </div> -->
+                </div>
+            </section>
+            <section class="sns">
+                <h2 class="title">SNS</h2>
+                <div class="sns-hash-tag">
+                    <span>#WITH SULWHASOO</span><span>#SIGNATURE ITEM</span><span class="re-hash">#THE
+                        SECRET OF
+                        AGELESS BEAUTY</span>
+                </div>
+                <div class="sns-wrap inner">
+                    <ul class="sns-list">
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-1.png" alt="sns1">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@oatskincarelatte</span><span>#sul-signature</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-2.png" alt="sns2">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@slowkitchen</span><span>#gift</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box sns-hover">
+                                    <img src="./images/sns-3.png" alt="sns3">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@storysenter_jy</span><span>#설화수</span><span>#윤조에센스</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-4.png" alt="sns4">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@slowkitchen</span><span>#withsulwhasoo</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-5.png" alt="sns5">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@bu__uk</span><span>#buckchon_sulwhasoo</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-6.png" alt="sns6">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@yllm_ch</span><span>#윤조에센스</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-7.png" alt="sns7">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@happysaea</span><span>#ActivatingSerum</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-8.png" alt="sns8">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@vi0424ola__</span><span>#FirstEssence</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-9.png" alt="sns9">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@babooyam</span><span>#FirstSerum</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#void">
+                                <div class="img-box">
+                                    <img src="./images/sns-10.png" alt="sns10">
+                                    <img src="./images/free-icon-hearts-138533.png" alt="heart" class="heart">
+                                </div>
+                                <div class="text-box">
+                                    <span>@ashlay.x</span><span>#sulwhasoo.official</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="arrow">
+                    <li class="left-arrow"><a href="#void">좌</a></li>
+                    <li class="right-arrow"><a href="#void">우</a></li>
+                </ul>
+                <p class="re-arrow"><a href="#void"><img src="./images/next-btn.png" alt="respond-sns-arrow"></a></p>
+            </section>
+        </main>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="inner">
+            <div class="foot-top re-del">
+                <ul>
+                    <li><a href="#void">회사소개</a></li>
+                    <li><a href="#void">서비스이용약관</a></li>
+                    <li><a href="#void">UGC이용약관</a></li>
+                    <li><a href="#void"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#void">영상정보처리방침</a></li>
+                    <li><a href="#void">사이트맵</a></li>
+                    <li><a href="#void">로그인</a></li>
+                </ul>
+            </div>
+            <div class="foot-bottom">
+                <div class="foot-left">
+                    <p class="re-del">고객서비스센터(수신자요금부담):080-02305454(월~금:AM 09:00 ~ PM 06:00)</p>
+                    <p class="copy">© AMOREPACIFIC CORPORATION. All rights reserved.</p>
+                </div>
+                <div class="foot-sns">
+                    <ul class="foot-sns-list">
+                        <li><a href="#void"><img src="./images/sns-icon_kakao.svg" alt="kakao"></a></li>
+                        <li><a href="#void"><img src="./images/sns-icon_face.svg" alt="facebook"></a></li>
+                        <li><a href="#void"><img src="./images/sns-icon_insta.svg" alt="insta"></a></li>
+                        <li><a href="#void"><img src="./images/sns-icon_youtube.svg" alt="youtube"></a></li>
+                        <li class="re-del"><a href="#void"><img src="./images/sns-icon_wa.svg" alt="wa"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="fixed-btn">
+        <p class="icon-kakao"><a href="#void"><img src="./images/sns-icon_kakao(white).svg" alt="kakao icon"></a></p>
+        <p class="icon-cart"><a href="#void"><img src="./images/myicon_cart(white).svg" alt="cart icon"></a></p>
+    </div>
+    <div class="top-btn">
+        <p class="pc-top-btn"><a href="#"><img src="./images/topdown-btn.png" alt="up-arrow"></a></p>
+        <!-- <p class="pc-bottom-btn"><a href="#"><img src="./images/topdown-btn.png" alt="down-arrow"></a></p> -->
+        <p class="re-top-btn"><a href="#"><img src="./images/mo-top-btn.png" alt="respond-top-btn"></a></p>
+    </div>
+</body>
+
+</html>

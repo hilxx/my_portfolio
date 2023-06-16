@@ -1,0 +1,38 @@
+/* 1. a */
+/* 2. li */
+/* 3.body 글자 크기 */
+/* 4. img vertical */
+/* 5. margin / padding */
+/* 6. clearFix */
+*, ul{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+body{
+    font-size: 14px;
+    font-family: 'Noto Serif KR', serif;
+    color:#505151;
+}
+img{
+    vertical-align:middle;
+}
+.clearFix::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.blind{
+    position:absolute;
+    top:-999999px;
+}
+address,i,em{
+    font-style:normal;
+}

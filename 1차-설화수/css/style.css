@@ -1,0 +1,929 @@
+header {
+    width: 100%;
+    height: 80px;
+    line-height: 60px;
+    position: fixed;
+    z-index: 100000;
+    background: white;
+}
+/* header.active{
+    background:white;
+} */
+header>.inner {
+    max-width: 1520px;
+    margin: 0 auto;
+    /* background-color: rgba(255, 0, 0, 0.2); */
+    line-height: 70px;
+}
+.ham-btn, .re-logo, .re-text, .re-top-btn, .re-title, .re-main1-serum,
+.re-main3-ltd, .re-brand-story, .re-sub, .re-box, .re-title-box,
+.re-arrow, .re-text-box, .mo-cream-wrap, .mo-del, #re-nav{
+    display:none;
+}
+.logo {
+    float: left;
+}
+
+nav {
+    float: left;
+}
+
+#nav {
+    margin: 5px 0 0 0;
+    padding: 0 100px 0 150px;
+}
+
+#nav>ul {
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
+}
+
+#nav>ul>li>a {
+    font-size: 1.29em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #0e244d;
+    transition: 0.5s;
+}
+
+#nav>ul>li:hover>a {
+    color: #2d77af;
+}
+
+#nav>ul>li {
+    position: relative;
+    transition: 0.5s;
+}
+
+#nav>ul>li .depth1 {
+    display: none;
+    width: 500px;
+    height: 70px;
+    border-radius: 5px;
+    /* background:#d9e4ec; */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b3bfdd+1,96b7ea+100 */
+    background: #b3bfdd;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #b3bfdd 1%, #96b7ea 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #b3bfdd 1%, #96b7ea 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #b3bfdd 1%, #96b7ea 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3bfdd', endColorstr='#96b7ea', GradientType=0);
+    /* IE6-9 */
+    position: absolute;
+    top: 60px;
+    left: -48px;
+    z-index: 10;
+    line-height: 70px;
+}
+
+#nav>ul>li:hover .depth1 {
+    display: block;
+}
+
+#nav .depth1>li {
+    font-size: 1.14em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    float: left;
+}
+#nav li:nth-child(4)>.depth1>li{
+    margin-right: 20px;
+}
+
+#nav .depth1 li>a {
+    display: block;
+    padding-left: 50px;
+    color: #ffffff;
+    transition:0.5s;
+}
+
+#nav .depth1 li:hover>a {
+    color: #0e244d;
+}
+
+.gnb-wrap {
+    float: right;
+    margin-top: 10px;
+}
+
+.gnb-wrap>.gnb {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.gnb-wrap>.search-wrap {
+    background:#fff;
+    width:1400px;
+    position:fixed;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+    /* opacity:0; */
+    display:none;
+}
+.search-wrap form{
+    background: whitesmoke;
+    display:flex;
+    justify-content:space-between;
+    padding-right:35px;
+}
+form .close img{
+    width:80%;
+}
+.form-wrap{
+    text-indent:5%;
+    flex:1;
+}
+.form-wrap input{
+    padding: 10px 0;
+    margin: 0 20px;
+    border:none;
+    background: none;
+    width:65%;
+    font-size: 1.142857em;
+    text-indent:10px;
+}
+.form-wrap input:focus{
+    border-bottom: 1px solid #1a273d;
+    outline:none;
+}
+.form-wrap button{
+    background:none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color:#888;
+}
+
+/* #container */
+/* .mainBanner */
+.mainBanner {
+    /* overflow: hidden; */
+    position: relative;
+    height:900px;
+    /* 이렇게 고정 사이즈를 주면 반응형에서 밑에가 붕 뜨기 때문에
+    반응형에 width: vw로 주기!!
+    ex) 그림1920 x 500 = 100% x X */
+}
+
+.banner>li {
+    width: 100%;
+    height:100%;
+    position: absolute;
+    /* fade하려고! -> absolute
+    slide -> flex */
+    display:none;
+}
+.banner>li:first-child{
+    display:block;
+}
+.banner .img-box {
+    /* width:100%; */
+    height: 100%;
+}
+
+.banner .img-box img {
+    width: 100%;
+    height:100%;
+    object-fit:cover;
+}
+.banner .text-box{
+    position: absolute;
+    word-break:keep-all;
+    text-align: center;
+}
+.banner>li:first-child .text-box {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 800px;
+}
+.banner>li .text-box{
+    top:30%;
+    left:20%;
+    transform: translate(-30%, -20%);
+}
+
+.banner .text-box>.sub-title {
+    font-size: 1.71em;
+    letter-spacing: 0.2px;
+}
+.banner .text-box>.sub-title{
+    margin:20px 0;
+}
+.banner>li:first-child .text-box>.sub-title {
+    padding: 40px 0 30px;
+    margin:0;
+}
+
+.banner .text-box>.text {
+    font-size: 1.71em;
+}
+.mainBanner>.pager {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
+}
+
+.mainBanner>.pager>li {
+    width: 13px;
+    height: 13px;
+    background: #eee;
+    border-radius: 50%;
+    text-indent: -999999px;
+    transition:0.5s;
+}
+
+.mainBanner>.pager>.pager-act {
+    background: #36496b;
+}
+
+.mainBanner>.scroll-btn {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-btn>p {
+    font-weight: 600;
+    position: relative;
+    color: #1a273d;
+}
+
+.scroll-btn>p::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 50px;
+    background: #63779b;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-btn img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-10%);
+    animation: scr-ani 1.5s infinite alternate;
+    width:75%;
+}
+
+.scroll-btn>.img-ani {
+    display: block;
+    width: 50px;
+}
+
+@keyframes scr-ani {
+    0% {
+        bottom: 5px;
+    }
+
+    100% {
+        bottom: -35px;
+    }
+}
+
+/* main */
+section>.inner,
+.signature>.inner,
+.signature>.cream-wrap>.inner {
+    max-width: 1520px;
+    margin: 0 auto;
+}
+
+.signature>div {
+    position: relative;
+}
+
+section .title,
+section>.title {
+    font-size: 3.43em;
+}
+.signature .title{
+    /* margin-left: 100px; */
+}
+section .sub-title {
+    font-size: 1.14em;
+    font-weight: 400;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 20px 0 110px 200px;
+}
+
+.signature>div .sig-title {
+    font-size: 2.57em;
+    font-weight: 600;
+}
+
+.signature>div .sub {
+    font-size: 1.71em;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+    margin: 10px 0 30px;
+}
+
+.signature>div .text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.14em;
+    line-height: 1.45em;
+}
+
+.signature>div p>a, .re-box>.view-more>a {
+    font-size: 1.29em;
+}
+
+.signature>div .text>span {
+    display: block;
+    margin: 30px 0;
+}
+
+.signature>div .view-more, .re-box>.view-more {
+    text-align: center;
+    width: 180px;
+    height: 50px;
+    border: 2px solid #0d0d0d;
+    line-height: 45px;
+    transition: 0.5s;
+}
+
+.signature>div .view-more>a, .mo-box>.view-more>a {
+    transition: 0.5s;
+}
+
+.signature>div .view-more:hover, .mo-box>.view-more:hover {
+    background: #222;
+}
+
+.signature>div .view-more:hover>a, .mo-box>.view-more:hover>a {
+    color: white;
+}
+
+.signature>div>img {
+    position: absolute;
+    /* top: 30px; */
+    left: -25px;
+}
+
+.signature>div>.content {
+    display: flex;
+    margin-top: 100px;
+    /* 쌤 피드백 */
+    /* 여백 일단 다 지우고, (한꺼번에 안 쓴 거)*/
+    gap: 50px;
+}
+.signature>div>.content .img-wrap{
+    width:40%;
+}
+.signature>div>.content .img-wrap img{
+    width:100%;
+}
+/*  */
+.serum-wrap {
+    padding: 100px 0;
+}
+.serum-wrap>img {
+    top: 130px;
+}
+.serum-wrap .text-box, .ltd-wrap .text-box{
+    margin-left:80px;
+}
+.cream-wrap {
+    position: relative;
+    padding-bottom: 100px;
+    height: 970px;
+}
+
+.cream-wrap .title-box {
+    position: absolute;
+    right: 400px;
+    top: 110px;
+}
+
+.cream-wrap>.title-box>.title-arrow-left {
+    position: absolute;
+    top: 40px;
+    right: -20px;
+}
+
+.cream-wrap>.img-wrap {
+    max-width: 100%;
+    height: 100%;
+}
+
+.cream-wrap>.img-wrap>img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.cream-wrap>.text-box {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-20%, -50%);
+}
+
+.ltd-wrap {
+    padding-bottom: 100px;
+}
+
+.ltd-wrap>img {
+    top: 30px;
+}
+/* .brand-story */
+.brand-story {
+    position: relative;
+}
+
+.brand-story>.img-wrap {
+    max-width: 100%;
+}
+
+.brand-story>.img-wrap>img {
+    width: 100%;
+}
+
+.brand-story>.text-box {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.brand-story>.text-box>.title {
+    font-size: 3.43em;
+    font-weight: 600;
+}
+
+.brand-story .brand-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.29em;
+    font-weight: 300;
+    line-height: 1.7;
+    margin: 70px 0 50px;
+}
+
+.brand-story .more-btn>a {
+    color: white;
+    font-size: 1.86em;
+}
+
+/* .best-seller */
+.best-seller>h2,
+.product>h2,
+.sns>h2 {
+    margin-left: 200px;
+}
+
+.best-seller {
+    position: relative;
+    padding:50px 0;
+}
+.best-seller>.slide-wrap{
+    overflow:hidden;
+}
+.best-seller>.slide-wrap>.slide-list {
+    display: flex;
+    /* gap: 50px; */
+    width:calc(100% * 8 / 5);
+}
+
+.slide-list>li {
+    /* width: 20%; */
+    position: relative;
+    /* text-box의 부모 */
+    padding-bottom: 200px;
+    text-align: center;
+    width:calc(100% / 8);
+}
+
+.slide-list .img-box {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.slide-list .img-box .center {
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.slide-list .img-box img {
+    width: 100%;
+}
+
+.slide-list .text-box {
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 130%;
+    word-break: keep-all;
+    position: absolute;
+    left: -40px;
+}
+.slide-list .text-box>.active-text-box{
+    display:none;
+}
+.slide-list .text-box .best-text {
+    text-align: start;
+}
+
+.slide-list .text-box .grey {
+    color: #aaa;
+}
+
+.slide-list .text-box .cost {
+    color: rgb(145, 46, 46);
+    font-weight: 500;
+}
+
+.slide-list .text-box>div>.box {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.slide-list .text-box>.active-text-box {
+    display: none;
+}
+
+section .arrow li>a {
+    display: block;
+    width: 40px;
+    height: 66px;
+    background-image: url(../images/arrow.png);
+    background-repeat: no-repeat;
+    text-indent: -99999px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+section .arrow .left-arrow>a, section .arrow .left>a {
+    left: 100px;
+}
+
+section>.arrow .right-arrow>a, section>.arrow .right>a{
+    background-position: -50px 0;
+    right: 50px;
+}
+
+/* .product */
+.product {
+    background: #f4f2ee;
+    padding: 50px 0 150px;
+}   
+
+.product-wrap {
+    /* background-color:antiquewhite; */
+}
+
+.product-list {
+    display: flex;
+    /* gap:30px; */
+    justify-content: space-around;
+}
+
+.product-list>li {
+    position: relative;
+    background-color: white;
+    width: 310px;
+    height: 490px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.product-list>li .hover {
+    width: 200px;
+    height: 200px;
+    border-radius: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* opacity:0.5; */
+    overflow: hidden;
+    /* hover img가 위로 올라오게끔 */
+    transition: 0.5s;
+}
+
+.product-list>li .hover img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product-list>li .circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.product-list>li .text-box {
+    padding: 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: 0.5s;
+}
+
+.product-list>li .text-box>.list-title,
+.product-list>li .text-box>.list-text {
+    position: absolute;
+}
+
+.product-list>li .text-box>.list-title {
+    top: 30px;
+    font-size: 1.29em;
+    text-transform: uppercase;
+}
+
+.product-list>li .text-box>.list-text {
+    font-size: 1.14em;
+    bottom: 30px;
+    width: 250px;
+    text-align: start;
+    /* width: 300px; */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* hover */
+.product-list>li:hover {
+    transform: scale(1.1);
+}
+
+.product-list>li:hover .hover {
+    width: 600px;
+    height: 600px;
+}
+
+.product-list>li:hover .text-box {
+    opacity: 0;
+}
+
+/* .sns */
+.sns {
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.sns .sns-hash-tag {
+    font-family: 'Noto Sans KR', sans-serif;
+    /* color: #bbb; */
+    color: #333;
+    margin: 20px 0 10px 200px;
+}
+
+.sns-hash-tag>span {
+    padding-right: 50px;
+    font-size: 1.14em;
+}
+.sns-wrap{
+    overflow:hidden;
+}
+.sns-wrap::after {
+    content: "";
+    display: block;
+    width: 1400px;
+    height: 30px;
+    background-image: url(../images/sns-line.png);
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sns-list {
+    display: flex;
+    justify-content: space-between;
+    /* gap:50px; */
+    padding: 50px 0;
+    /* gap으로 조절하지 말고 이미지 자체의 사이즈를 조절하기!
+    반응형으로 갈 때 제각각으로 사이즈가 변함!! */
+    width:calc(1000%/5);
+}
+
+.sns-list>li {
+    /* width: 18%; */
+    width:calc(100%/10);
+    padding: 0 10px;
+}
+
+.sns-list .img-box img {
+    width: 100%;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.sns-list .img-box {
+    position: relative;
+}
+
+.sns-list .img-box .heart {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sns-list>li:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.sns-list>li:hover .img-box .heart {
+    opacity: 1;
+}
+
+.sns-list .text-box {
+    text-align: center;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+.sns>.arrow li>a {
+    top: 40%;
+}
+
+.sns>.arrow>.left-arrow a {
+    left: 100px;
+}
+
+.sns>.arrow>.right-arrow a {
+    right: 50px;
+}
+
+/* footer */
+footer {
+    background: #1c3258;
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+}
+
+footer::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 60px;
+}
+
+footer>.inner {
+    max-width: 1270px;
+    margin: 0 auto;
+}
+
+.foot-top {
+    padding: 20px 0;
+}
+
+.foot-top>ul {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.foot-top li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 15px;
+    background: white;
+    position: absolute;
+    top: 20%;
+    /* transform:translateX(-50%); */
+    margin-left: 120px;
+}
+
+.foot-top li:nth-child(2)::after {
+    margin-left: 150px;
+}
+
+.foot-top li:nth-child(3)::after {
+    margin-left: 140px;
+}
+
+.foot-top li:nth-child(4)::after {
+    margin-left: 160px;
+}
+
+.foot-top li:nth-child(5)::after {
+    margin-left: 160px;
+}
+
+.foot-top li:last-child::after {
+    display: none;
+}
+
+.foot-top li>a {
+    color: white;
+}
+
+.foot-bottom {
+    padding: 40px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.foot-bottom p {
+    color: white;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.foot-sns {
+    padding-bottom: 50px;
+}
+
+.foot-sns>.foot-sns-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.foot-sns-list li {
+    width: 60px;
+}
+
+.foot-sns-list img {
+    width: 100%;
+}
+/* fixed btn */
+.fixed-btn>p, .top-btn p{
+    position:fixed;
+    right: 20px;
+    border-radius: 50%;
+}
+.fixed-btn>p{
+    width:55px;
+    height:55px;
+    background: #96b7ea;
+    transition:0.5s;
+}
+.fixed-btn>p img{
+    transition:0.3s;
+}
+.fixed-btn>.icon-kakao{
+    bottom:255px;
+}
+.fixed-btn>.icon-cart{
+    bottom:190px;
+    text-align:center;
+    padding-top:10px;
+}
+.fixed-btn>.icon-cart img{
+    width:30px;
+    height:30px;
+}
+.fixed-btn>p:hover{
+    /* background:rgb(14, 87, 160); */
+    background:#2d77af;
+}
+.fixed-btn>p:hover img{
+    transform:scale(1.2);
+}
+.fixed-btn>.icon-cart::after{
+    content:"0";
+    display:block;
+    width:20px;
+    height:20px;
+    background:red;
+    border-radius:50%;
+    color:white;
+    position:relative;
+    /* 부모는 fixed-btn */
+    bottom:45px;
+    left:35px;
+}
+.top-btn {
+    position: relative;
+}
+
+.top-btn .pc-top-btn {
+    bottom: 50px;
+}
+
+.top-btn>.pc-top-btn img {
+    width: 54px;
+    height: 104px;
+}

@@ -1,0 +1,402 @@
+.re-appear, #re-nav, .mo-appear{
+    display:none;
+}
+/* header */
+header{
+    width:100%;
+    height:80px;
+    line-height:70px;
+    position:fixed;
+    z-index:1000;
+    background-color:white;
+}
+header>.inner{
+    max-width:1520px;
+    margin:0 auto;
+}
+
+.ham-btn, .re-nav{
+    display:none;
+}
+
+.logo{
+    float:left;
+}
+nav{
+    float:left;
+}
+#nav{
+    margin: 7px 0 0 190px;
+}
+#nav>ul{
+    display:flex;
+    gap: 100px;
+    justify-content: space-evenly;
+}
+#nav>ul>li>a{
+    font-size: 1.29em;
+    font-weight:600;
+    text-transform: uppercase;
+    color: #0e244d;
+    transition:0.5s;
+}
+#nav li:hover>a{
+    color:#2d77af;
+}
+#nav>ul>li{
+    position:relative;
+}
+#nav .depth1{
+    display:none;
+    width:500px;
+    height:70px;
+    border-radius: 5px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b3bfdd+1,96b7ea+100 */
+    background: #b3bfdd;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #b3bfdd 1%, #96b7ea 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #b3bfdd 1%, #96b7ea 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #b3bfdd 1%, #96b7ea 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3bfdd', endColorstr='#96b7ea', GradientType=0);
+    /* IE6-9 */
+    position:absolute;
+    top:60px;
+    left:-48px;
+    z-index:10;
+}
+#nav .depth1>li{
+    float:left;
+    font-size: 1.14em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:400;
+    padding-left:50px;
+}
+#nav li:nth-child(4)>.depth1>li{
+    margin-right: 20px;
+}
+#nav .depth1 li>a{
+    color:white;
+    transition:0.5s;
+}
+#nav .depth1>li:hover>a{
+    color: #0e244d;
+}
+#nav>ul>li:hover .depth1{
+    display:block;
+}
+.gnb-wrap{
+    float:right;
+    margin-top:10px;
+}
+.gnb{
+    display:flex;
+    gap:30px;
+}
+.gnb-wrap>.search-wrap {
+    display: none;
+}
+/* #container */
+/* subPage-banner */
+.subPage-banner{
+    width:100%;
+    /* margin: 0 auto;
+    height:100%; */
+}
+.subPage-banner img{
+    width:100%;
+    /* height:100%;
+    object-fit:cover; */
+}
+/* main */
+main>.inner{
+    max-width: 1520px;
+    margin: 100px auto;
+    text-align:center;
+}
+/* .category-wrap */
+.category-wrap{
+    font-family:'Gowun Batang', serif;
+    display:flex;
+    justify-content:space-between;
+    margin: 100px 0;
+}
+.category-wrap a{
+    font-size: 1.57142857em;
+}
+.category-wrap .group{
+    position:relative;
+}
+.category-wrap .group .ctg{
+    display:inline-block;
+    border: 1px solid #a3c0ec;
+    padding: 10px 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition:0.5s;
+}
+.category-wrap img{
+    position:absolute;
+    top:10px;
+    right:-80px;
+}
+.group{
+    height: 60px;
+    /* hover 했을 때 자꾸 밑으로 밀리는 이유:
+    click도 자리를 차지하고 있기 때문에!!
+    해결방법 1. group에 높이값 주기
+    2.click(depth)을 position으로 띄우기! */
+    transition:0.5s;
+}
+.group:hover .ctg{
+    background:#a3c0ec;
+}
+.group:hover .ctg>a{
+    color:white;
+}
+.group:hover .click{
+    display:block;
+}
+.click{
+    display:none;
+    line-height:50px;
+    padding: 10px 0;
+    background: #e1ebfa;
+    position:relative;
+    z-index:10;
+}
+.click p a{
+    color:white;
+    transition:0.5s;
+}
+.click p:hover a{
+    color: #333;
+}
+.category{
+    display:flex;
+    justify-content:space-between;
+    gap:50px;
+    padding: 10px 0 0 0;
+}
+.category>li a{
+    transition:0.5s;
+}
+.category>li:first-child{
+    text-decoration:underline;
+}
+.category>li:hover a{
+    text-decoration:underline;
+    color:#ccc;
+}
+/* .product-wrap */
+.product-wrap{
+    width:100%;
+}
+.product-list{
+    display:grid;
+    /* grid-template-columns: repeat(4,1fr); */
+    grid-template-columns: repeat(4,minmax(100px, 50%));
+    gap:20px;
+    row-gap: 50px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.product-list>li{
+    width:100%;
+    position:relative;
+    height:550px;
+}
+.product-list .img-wrap{
+    width:100%;
+    height:440px;
+    border-radius: 30px;
+    overflow:hidden;
+}
+.product-list .img-wrap img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition:0.5s;
+}
+.product-list .img-wrap:hover img{
+    transform: scale(1.1);
+}
+.product-list .capacity{
+    position:absolute;
+    bottom:130px;
+    right:20px;
+    transition:0.5s;
+}
+.product-list .img-wrap:hover + .capacity{
+    color:#333;
+}
+.product-list .capacity>span:first-child{
+    display:inline-block;
+    padding-right:10px;
+}
+.product-list .item-name, .product-list .cost{
+    font-size: 1.142857em;
+}
+.product-list .text-box{
+    padding: 30px 0;
+}
+.product-list .item-enName{
+    padding: 15px 0 20px;
+}
+.capacity, .item-enName{
+    color: #a7a7a8;
+}
+.product-wrap .pager{
+    display:flex;
+    justify-content: center;
+    padding-top:100px;
+}
+.pager li{
+    padding: 20px 50px;
+}
+.pager li:first-child{
+    text-decoration:underline;
+}
+.pager>li:hover{
+    text-decoration:underline;
+}
+/* footer */
+footer{
+    background:#1c3258;
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+}
+footer::after{
+    content:"";
+    display:block;
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,0.5);
+    position:absolute;
+    top:60px;
+}
+footer>.inner{
+    max-width:1270px;
+    margin: 0 auto;
+}
+.foot-top{
+    padding: 20px 0;
+}
+.foot-top>ul{
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+}
+.foot-top li::after{
+    content:"";
+    display:block;
+    width:1px;
+    height:15px;
+    background:white;
+    position:absolute;
+    top:20%;
+    margin-left: 120px;
+}
+.foot-top li:nth-child(2)::after {
+    margin-left: 150px;
+}
+
+.foot-top li:nth-child(3)::after {
+    margin-left: 140px;
+}
+
+.foot-top li:nth-child(4)::after {
+    margin-left: 160px;
+}
+
+.foot-top li:nth-child(5)::after {
+    margin-left: 160px;
+}
+.foot-top li:last-child::after{
+    display:none;
+}
+.foot-top li>a{
+    color:white;
+}
+.foot-bottom{
+    padding: 40px 0 0;
+    display:flex;
+    justify-content: space-between;
+}
+.foot-bottom p{
+    color:white;
+    font-weight:300;
+    margin-bottom: 10px;
+}
+.foot-sns{
+    padding-bottom: 50px;
+}
+.foot-sns>.foot-sns-list{
+    display:flex;
+    justify-content: space-between;
+}
+.foot-sns-list li{
+    width:60px;
+}
+.foot-sns-list img{
+    width:100%;
+}
+/* fixed btn */
+.fixed-btn>p, .top-btn p{
+    position:fixed;
+    right: 20px;
+    border-radius: 50%;
+}
+.fixed-btn>p{
+    width:55px;
+    height:55px;
+    background: #96b7ea;
+    transition:0.5s;
+}
+.fixed-btn>p img{
+    transition:0.3s;
+}
+.fixed-btn>.icon-kakao{
+    bottom:255px;
+}
+.fixed-btn>.icon-cart{
+    bottom:190px;
+    text-align:center;
+    padding-top:10px;
+}
+.fixed-btn>.icon-cart img{
+    width:30px;
+    height:30px;
+}
+.fixed-btn>p:hover{
+    /* background:rgb(14, 87, 160); */
+    background:#2d77af;
+}
+.fixed-btn>p:hover img{
+    transform:scale(1.2);
+}
+.fixed-btn>.icon-cart::after{
+    content:"0";
+    display:block;
+    width:20px;
+    height:20px;
+    background:red;
+    border-radius:50%;
+    color:white;
+    position:relative;
+    /* 부모는 fixed-btn */
+    bottom:45px;
+    left:35px;
+}
+.top-btn {
+    position: relative;
+}
+
+.top-btn .pc-top-btn {
+    bottom: 50px;
+}
+
+.top-btn>.pc-top-btn img {
+    width: 54px;
+    height: 104px;
+}

@@ -1,0 +1,35 @@
+nav{
+    position:fixed;
+    width:100%;
+    /* height:100vh; */
+    background:rgba(0,0,0,0.5);
+    transform:translateX(-100%);
+    transition:0.3s;
+}
+.activeMenu{
+    transform: translateX(0);
+}
+#re-nav{
+    background-color:white;
+    /* width:80%; */
+    min-width:320px;
+    height:100vh;
+    position:fixed;
+    /* right:-100%;
+    top:0; */
+}
+.hamClose{
+    position:absolute;
+    right:10px;
+    top:20px;
+}
+.hamClose>a{
+    display:block;
+    width:45px;
+    height:48px;
+    background-image:url(../images/ham-btn.png);
+    background-repeat:no-repeat;
+}
+.hamClose>.on{
+    background-image:url(../images/close-btn.png);
+}
