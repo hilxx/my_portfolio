@@ -216,15 +216,9 @@
         /* width:90%; */
         height:600px;
     }
-    /* .product-list .item-name, .product-list .cost{
-        font-size:1.86666em;
-    } */
     .product-list .capacity{
         bottom:170px;
     }
-    /* .product-list .capacity, .product-list .item-enName{
-        font-size:1.6em;
-    } */
     .product-list .text-box{
         width:100%;
     }

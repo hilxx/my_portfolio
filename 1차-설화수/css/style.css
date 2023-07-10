@@ -6,13 +6,9 @@ header {
     z-index: 100000;
     background: white;
 }
-/* header.active{
-    background:white;
-} */
 header>.inner {
     max-width: 1520px;
     margin: 0 auto;
-    /* background-color: rgba(255, 0, 0, 0.2); */
     line-height: 70px;
 }
 .ham-btn, .re-logo, .re-text, .re-top-btn, .re-title, .re-main1-serum,
@@ -309,9 +305,6 @@ section .title,
 section>.title {
     font-size: 3.43em;
 }
-.signature .title{
-    /* margin-left: 100px; */
-}
 section .sub-title {
     font-size: 1.14em;
     font-weight: 400;
@@ -369,15 +362,12 @@ section .sub-title {
 
 .signature>div>img {
     position: absolute;
-    /* top: 30px; */
     left: -25px;
 }
 
 .signature>div>.content {
     display: flex;
     margin-top: 100px;
-    /* 쌤 피드백 */
-    /* 여백 일단 다 지우고, (한꺼번에 안 쓴 거)*/
     gap: 50px;
 }
 .signature>div>.content .img-wrap{
@@ -494,7 +484,6 @@ section .sub-title {
 }
 .best-seller>.slide-wrap>.slide-list {
     display: flex;
-    /* gap: 50px; */
     width:calc(100% * 8 / 5);
 }
 
@@ -582,15 +571,10 @@ section>.arrow .right-arrow>a, section>.arrow .right>a{
 .product {
     background: #f4f2ee;
     padding: 50px 0 150px;
-}   
-
-.product-wrap {
-    /* background-color:antiquewhite; */
 }
 
 .product-list {
     display: flex;
-    /* gap:30px; */
     justify-content: space-around;
 }
 
@@ -613,7 +597,6 @@ section>.arrow .right-arrow>a, section>.arrow .right>a{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* opacity:0.5; */
     overflow: hidden;
     /* hover img가 위로 올라오게끔 */
     transition: 0.5s;
@@ -654,7 +637,6 @@ section>.arrow .right-arrow>a, section>.arrow .right>a{
     bottom: 30px;
     width: 250px;
     text-align: start;
-    /* width: 300px; */
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -683,7 +665,6 @@ section>.arrow .right-arrow>a, section>.arrow .right>a{
 
 .sns .sns-hash-tag {
     font-family: 'Noto Sans KR', sans-serif;
-    /* color: #bbb; */
     color: #333;
     margin: 20px 0 10px 200px;
 }
@@ -812,7 +793,6 @@ footer>.inner {
     background: white;
     position: absolute;
     top: 20%;
-    /* transform:translateX(-50%); */
     margin-left: 120px;
 }
 
@@ -896,7 +876,6 @@ footer>.inner {
     height:30px;
 }
 .fixed-btn>p:hover{
-    /* background:rgb(14, 87, 160); */
     background:#2d77af;
 }
 .fixed-btn>p:hover img{
