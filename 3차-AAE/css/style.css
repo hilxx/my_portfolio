@@ -15,10 +15,6 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
-header>.inner {
-    /* 띄고 싶으면 logo랑 nav를 묶고 flex를 줘야한다 */
-}
-
 .ham-btn,
 .mo-moreBtn {
     display: none;
@@ -28,7 +24,6 @@ header>.inner {
     width: 110px;
     float: left;
     margin-top: 20px;
-    /* 반응형에서 지웠음 다시 보기 */
 }
 
 /* nav */
@@ -282,14 +277,10 @@ main section .title {
 }
 
 .item-wrap {
-    /* margin: 0 100px; */
     height:100%;
 }
 
 .item-wrap>.item-list {
-    /* justify-content: space-between;
-    width: 100%; */
-    /* margin-top: 50px; */
     width:800%;
     height:100%;
     display:flex;
